@@ -1,0 +1,35 @@
+[project]
+name = "An effectiveness of various multi-agent architectures in the analysis of insurance documents"
+version = "0.1.0"
+description = "A master thesis project implementing and evaluating multiple multi-agent architecture families for structured analysis of insurance documents and question-answering over insurance product materials."
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "arize-phoenix-client>=1.29.0",
+    "arize-phoenix-evals>=2.10.0",
+    "arize-phoenix-otel>=0.6.0",
+    "datasets>=3.0.0",
+    "ipykernel>=7.2.0",
+    "jupyter>=1.1.1",
+    "langchain>=1.2.10",
+    "langchain-core>=1.2.13",
+    "langchain-openai>=1.1.10",
+    "langchain-text-splitters>=1.1.0",
+    "langgraph>=0.2.0",
+    "matplotlib>=3.9.0",
+    "notebook>=7.5.3",
+    "openai>=2.21.0",
+    "openinference-instrumentation-langchain>=0.1.0",
+    "pandas>=2.2.0",
+    "pillow>=12.1.1",
+    "pydantic>=2.12.5",
+    "pypdfium2>=5.4.0",
+    "python-dotenv>=1.2.1",
+    "pyyaml>=6.0.3",
+    "qdrant-client>=1.16.2",
+    "seaborn>=0.13.2",
+    "structlog>=24.1.0",
+    "tenacity>=9.1.4",
+    "tiktoken>=0.7.0",
+    "tqdm>=4.67.3",
+]

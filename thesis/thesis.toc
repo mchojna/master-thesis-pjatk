@@ -1,0 +1,149 @@
+\babel@toc {polish}{}\relax 
+\contentsline {chapter}{\numberline {1}Wprowadzenie}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Motywacja i~problem badawczy}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Pytania badawcze}{3}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Cele badawcze}{4}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Zakres i~ograniczenia}{4}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Struktura pracy}{5}{section.1.5}%
+\contentsline {chapter}{\numberline {2}Podstawy teoretyczne}{7}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Systemy agentowe}{7}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Pojęcie agenta}{7}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Klasyfikacja architektur agentowych}{8}{subsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.1.3}Architektury jednoagentowe}{9}{subsection.2.1.3}%
+\contentsline {subsection}{\numberline {2.1.4}Architektury wieloagentowe}{10}{subsection.2.1.4}%
+\contentsline {subsection}{\numberline {2.1.5}Interfejsy narzędziowe agentów}{13}{subsection.2.1.5}%
+\contentsline {subsection}{\numberline {2.1.6}Protokoły komunikacji agentów}{13}{subsection.2.1.6}%
+\contentsline {subsection}{\numberline {2.1.7}Systemy pamięci agentów}{14}{subsection.2.1.7}%
+\contentsline {subsection}{\numberline {2.1.8}Ewaluacja agentów}{15}{subsection.2.1.8}%
+\contentsline {subsection}{\numberline {2.1.9}Przegląd istniejących środowisk agentowych}{18}{subsection.2.1.9}%
+\contentsline {section}{\numberline {2.2}Generowanie wspomagane wyszukiwaniem}{20}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Pojęcie RAG}{20}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Problem halucynacji w~modelach językowych}{20}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}Problem okna kontekstowego w modelach językowych}{22}{subsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.2.4}Architektury RAG}{22}{subsection.2.2.4}%
+\contentsline {subsection}{\numberline {2.2.5}Metody wyszukiwania dokumentów}{24}{subsection.2.2.5}%
+\contentsline {subsection}{\numberline {2.2.6}Metody fragmentacji dokumentów}{25}{subsection.2.2.6}%
+\contentsline {subsection}{\numberline {2.2.7}Ewaluacja RAG}{26}{subsection.2.2.7}%
+\contentsline {subsection}{\numberline {2.2.8}Agentowy RAG}{29}{subsection.2.2.8}%
+\contentsline {section}{\numberline {2.3}Środowisko dokumentów ubezpieczeniowych}{30}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Przetwarzanie języka naturalnego dla dokumentów ubezpieczeniowych}{30}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Ogólne Warunki Ubezpieczenia}{33}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.3}Informacyjny Dokument Produktu Ubezpieczeniowego}{33}{subsection.2.3.3}%
+\contentsline {subsection}{\numberline {2.3.4}Klasyfikacja pytań}{35}{subsection.2.3.4}%
+\contentsline {section}{\numberline {2.4}Przegląd prac pokrewnych}{36}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Istniejące rozwiązania}{36}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}Luki badawcze i~wkład niniejszej pracy}{38}{subsection.2.4.2}%
+\contentsline {chapter}{\numberline {3}Metodologia}{41}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Metoda badawcza}{41}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Projekt eksperymentu}{42}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Zmienna niezależna}{42}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Zmienne zależne}{44}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Warunki kontrolowane}{44}{subsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.2.4}Plan porównawczy}{44}{subsection.3.2.4}%
+\contentsline {section}{\numberline {3.3}Materiał badawczy}{45}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Kryteria oceny}{47}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Miary ilościowe}{47}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Miary jakościowe}{49}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.3}Protokół ewaluacji}{49}{subsection.3.4.3}%
+\contentsline {section}{\numberline {3.5}Procedura badawcza}{50}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Etapy eksperymentu}{50}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}Analiza ilościowa}{50}{subsection.3.5.2}%
+\contentsline {subsection}{\numberline {3.5.3}Analiza jakościowa}{51}{subsection.3.5.3}%
+\contentsline {subsection}{\numberline {3.5.4}Perspektywa produkcyjna}{51}{subsection.3.5.4}%
+\contentsline {section}{\numberline {3.6}Odtwarzalność}{51}{section.3.6}%
+\contentsline {chapter}{\numberline {4}Implementacja}{52}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Stos technologiczny}{52}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Architektura modułowa systemu}{54}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Elementy architektury współdzielone}{55}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Stan grafu}{56}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Konfiguracja uruchomieniowa}{57}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.3}Schematy wyjść strukturalnych}{57}{subsection.4.3.3}%
+\contentsline {subsection}{\numberline {4.3.4}Rejestr narzędzi i~fabryka grafów}{58}{subsection.4.3.4}%
+\contentsline {section}{\numberline {4.4}Implementacja promptów}{58}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Prompt ekstrakcyjny}{58}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Prompty strukturalne}{59}{subsection.4.4.2}%
+\contentsline {subsection}{\numberline {4.4.3}Prompty odpowiedziowe}{59}{subsection.4.4.3}%
+\contentsline {subsection}{\numberline {4.4.4}Prompty ewaluacyjne}{59}{subsection.4.4.4}%
+\contentsline {section}{\numberline {4.5}Implementacja narzędzi}{60}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}Parser pytania}{61}{subsection.4.5.1}%
+\contentsline {subsection}{\numberline {4.5.2}Przepisywanie zapytania}{61}{subsection.4.5.2}%
+\contentsline {subsection}{\numberline {4.5.3}Wyszukiwanie}{61}{subsection.4.5.3}%
+\contentsline {subsection}{\numberline {4.5.4}Ponowne szeregowanie}{61}{subsection.4.5.4}%
+\contentsline {subsection}{\numberline {4.5.5}Selektor dowodów}{62}{subsection.4.5.5}%
+\contentsline {subsection}{\numberline {4.5.6}Generator cytowań}{62}{subsection.4.5.6}%
+\contentsline {subsection}{\numberline {4.5.7}Selektor promptu}{62}{subsection.4.5.7}%
+\contentsline {subsection}{\numberline {4.5.8}Syntezator odpowiedzi}{62}{subsection.4.5.8}%
+\contentsline {section}{\numberline {4.6}Implementacja architektur agentowych}{63}{section.4.6}%
+\contentsline {subsection}{\numberline {4.6.1}Architektura deterministyczna}{63}{subsection.4.6.1}%
+\contentsline {subsection}{\numberline {4.6.2}Architektura planer--wykonawca}{64}{subsection.4.6.2}%
+\contentsline {subsection}{\numberline {4.6.3}Architektura router--specjalista}{64}{subsection.4.6.3}%
+\contentsline {subsection}{\numberline {4.6.4}Architektura tablicowa}{65}{subsection.4.6.4}%
+\contentsline {subsection}{\numberline {4.6.5}Architektura hierarchiczna}{65}{subsection.4.6.5}%
+\contentsline {subsection}{\numberline {4.6.6}Architektura ReAct}{65}{subsection.4.6.6}%
+\contentsline {section}{\numberline {4.7}Protokół przetwarzania dokumentów}{66}{section.4.7}%
+\contentsline {subsection}{\numberline {4.7.1}Ekstrakcja}{67}{subsection.4.7.1}%
+\contentsline {subsection}{\numberline {4.7.2}Fragmentacja}{67}{subsection.4.7.2}%
+\contentsline {subsection}{\numberline {4.7.3}Indeksowanie}{67}{subsection.4.7.3}%
+\contentsline {section}{\numberline {4.8}Infrastruktura ewaluacyjna}{68}{section.4.8}%
+\contentsline {subsection}{\numberline {4.8.1}Uruchamianie architektur}{68}{subsection.4.8.1}%
+\contentsline {subsection}{\numberline {4.8.2}Ocena odpowiedzi}{68}{subsection.4.8.2}%
+\contentsline {subsection}{\numberline {4.8.3}Śledzenie przebiegów}{68}{subsection.4.8.3}%
+\contentsline {section}{\numberline {4.9}Wybrane zagadnienia inżynieryjne}{69}{section.4.9}%
+\contentsline {subsection}{\numberline {4.9.1}Zarządzanie rozmiarem okna kontekstowego}{69}{subsection.4.9.1}%
+\contentsline {subsection}{\numberline {4.9.2}Agregacja metadanych wykonania}{69}{subsection.4.9.2}%
+\contentsline {subsection}{\numberline {4.9.3}Obsługa niepoprawnych wyjść modeli}{69}{subsection.4.9.3}%
+\contentsline {subsection}{\numberline {4.9.4}Strategia wielojęzycznych promptów}{69}{subsection.4.9.4}%
+\contentsline {subsection}{\numberline {4.9.5}Stabilność identyfikatorów fragmentów}{70}{subsection.4.9.5}%
+\contentsline {subsection}{\numberline {4.9.6}Izolacja warstwy ewaluacyjnej}{70}{subsection.4.9.6}%
+\contentsline {chapter}{\numberline {5}Eksperyment i wyniki}{71}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Przebieg wykonania}{71}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Czas trwania}{71}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Kompletność i~błędy wykonania}{72}{subsection.5.1.2}%
+\contentsline {subsection}{\numberline {5.1.3}Artefakty wynikowe}{72}{subsection.5.1.3}%
+\contentsline {section}{\numberline {5.2}Wyniki operacyjne}{73}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Zużycie tokenów i~koszt}{73}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Wywołania narzędzi i~iteracje}{74}{subsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.2.3}Fragmenty z~wyszukiwania i~cytowania}{74}{subsection.5.2.3}%
+\contentsline {section}{\numberline {5.3}Wyniki jakościowe}{75}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Wierność}{75}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}Poprawność}{77}{subsection.5.3.2}%
+\contentsline {subsection}{\numberline {5.3.3}Zwięzłość}{78}{subsection.5.3.3}%
+\contentsline {subsection}{\numberline {5.3.4}Trafność dokumentów}{80}{subsection.5.3.4}%
+\contentsline {section}{\numberline {5.4}Parametry konfiguracyjne eksperymentu}{81}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}Parametry modeli językowych}{81}{subsection.5.4.1}%
+\contentsline {subsection}{\numberline {5.4.2}Parametry wyszukiwania}{82}{subsection.5.4.2}%
+\contentsline {subsection}{\numberline {5.4.3}Parametry fragmentacji}{83}{subsection.5.4.3}%
+\contentsline {subsection}{\numberline {5.4.4}Parametry architektur}{83}{subsection.5.4.4}%
+\contentsline {subsection}{\numberline {5.4.5}Parametry wykonania}{84}{subsection.5.4.5}%
+\contentsline {chapter}{\numberline {6}Wnioski i~zakończenie}{85}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Wnioski ilościowe}{85}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}Wierność}{85}{subsection.6.1.1}%
+\contentsline {subsection}{\numberline {6.1.2}Poprawność}{86}{subsection.6.1.2}%
+\contentsline {subsection}{\numberline {6.1.3}Zwięzłość}{87}{subsection.6.1.3}%
+\contentsline {subsection}{\numberline {6.1.4}Trafność dokumentów}{87}{subsection.6.1.4}%
+\contentsline {subsection}{\numberline {6.1.5}Koszty operacyjne}{88}{subsection.6.1.5}%
+\contentsline {section}{\numberline {6.2}Wnioski jakościowe}{89}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}Charakterystyka niepowodzeń}{90}{subsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.2.2}Systematyczne pomijanie klauzul wyłączeń}{90}{subsection.6.2.2}%
+\contentsline {subsection}{\numberline {6.2.3}Niedobór kontekstu definicyjnego}{91}{subsection.6.2.3}%
+\contentsline {subsection}{\numberline {6.2.4}Bezwarunkowa dekompozycja w~architekturze hierarchicznej}{91}{subsection.6.2.4}%
+\contentsline {subsection}{\numberline {6.2.5}Rozszerzanie zakresu wyszukiwania w~architekturze ReAct}{91}{subsection.6.2.5}%
+\contentsline {subsection}{\numberline {6.2.6}Niespójność autorytetu między OWU a~IPID}{92}{subsection.6.2.6}%
+\contentsline {subsection}{\numberline {6.2.7}Samokorekta w~architekturze tablicowej}{92}{subsection.6.2.7}%
+\contentsline {section}{\numberline {6.3}Rozstrzygnięcie problemu badawczego i~realizacja celów}{92}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}Rozstrzygnięcie głównego problemu badawczego}{92}{subsection.6.3.1}%
+\contentsline {subsection}{\numberline {6.3.2}Wpływ topologii na jakość odpowiedzi}{93}{subsection.6.3.2}%
+\contentsline {subsection}{\numberline {6.3.3}Kompromis między jakością a~kosztem}{93}{subsection.6.3.3}%
+\contentsline {subsection}{\numberline {6.3.4}Wpływ planowania, trasowania i~dekompozycji}{93}{subsection.6.3.4}%
+\contentsline {subsection}{\numberline {6.3.5}Wzorce niepowodzeń}{94}{subsection.6.3.5}%
+\contentsline {subsection}{\numberline {6.3.6}Odpowiedzi na pytania badawcze}{94}{subsection.6.3.6}%
+\contentsline {subsection}{\numberline {6.3.7}Realizacja celów badawczych}{95}{subsection.6.3.7}%
+\contentsline {section}{\numberline {6.4}Kierunki dalszych badań}{95}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Rekomendacje dla praktyków}{96}{section.6.5}%
+\contentsline {section}{\numberline {6.6}Zakończenie}{97}{section.6.6}%
+\contentsline {chapter}{Wykaz tabel}{100}{chapter*.63}%
+\contentsline {chapter}{Wykaz rysunk\'ow}{101}{chapter*.64}%
+\contentsline {chapter}{Wykaz wykres\'ow}{102}{chapter*.65}%
+\contentsline {chapter}{Bibliografia}{103}{chapter*.66}%
+\contentsline {chapter}{\numberline {A}Prompty systemu}{108}{appendix.A}%
+\contentsline {chapter}{\numberline {B}Diagramy architektur agentowych}{118}{appendix.B}%

@@ -1,0 +1,25 @@
+\babel@toc {polish}{}\relax 
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Projekt eksperymentu}}{2}{figure.caption.2}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Pętla decyzyjna agenta}}{8}{figure.caption.4}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Podział architektur agentowych}}{9}{figure.caption.5}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Potok prostego RAG}}{23}{figure.caption.10}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Potok zaawansowanego RAG}}{23}{figure.caption.11}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Potok modularnego RAG}}{24}{figure.caption.12}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Chronologia rozwiązań}}{38}{figure.caption.17}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Etapy eksperymentu}}{50}{figure.caption.27}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Warstwy systemu}}{55}{figure.caption.30}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Potok przetwarzania dokumentów}}{67}{figure.caption.36}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {B.1}{\ignorespaces Architektura deterministyczna}}{119}{figure.caption.67}%
+\contentsline {figure}{\numberline {B.2}{\ignorespaces Architektura planer--wykonawca}}{120}{figure.caption.68}%
+\contentsline {figure}{\numberline {B.3}{\ignorespaces Architektura router--specjalista}}{121}{figure.caption.69}%
+\contentsline {figure}{\numberline {B.4}{\ignorespaces Architektura tablicowa}}{122}{figure.caption.70}%
+\contentsline {figure}{\numberline {B.5}{\ignorespaces Architektura hierarchiczna}}{123}{figure.caption.71}%
+\contentsline {figure}{\numberline {B.6}{\ignorespaces Architektura ReAct}}{124}{figure.caption.72}%

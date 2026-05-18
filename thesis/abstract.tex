@@ -1,0 +1,35 @@
+\begin{abstract}
+  W pracy zbadano wpływ topologii systemów agentowych na jakość odpowiedzi
+  na pytania wymagające analizy dokumentów ubezpieczeniowych -- Ogólnych Warunków
+  Ubezpieczenia (OWU) oraz dokumentów zawierających informacje o~produkcie
+  ubezpieczeniowym (IPID).  Środowisko testowe wybrano ze względu na jego złożoność: specjalistyczny
+  język prawniczo-ubezpieczeniowy łączy się z~wielopoziomową strukturą warunków
+  i~wyłączeń rozproszonych w~wielu paragrafach. Wymagało to od badanych
+  architektur skutecznego wykorzystania mechanizmów wyszukiwania i~wnioskowania.
+
+  Porównano sześć architektur opartych na dużych modelach językowych
+  (\textit{ang.}~\textit{Large Language Models}, LLM): deterministyczną,
+  planer--wykonawca, router--specjalista, tablicową, hierarchiczną oraz ReAct.
+  Bazę wiedzy systemu stanowiły 22 polskie dokumenty ubezpieczeniowe pochodzące
+  od trzech głównych towarzystw ubezpieczeniowych. Opracowano autorski zestaw 90
+  pytań w~czterech poziomach trudności: bardzo łatwym, łatwym, trudnym i~bardzo
+  trudnym -- każde pytanie wymagało odniesienia się do treści zgromadzonych
+  dokumentów. Łącznie przeprowadzono 540 uruchomień, które oceniono według
+  wspólnego protokołu ewaluacyjnego uwzględniającego wierność, poprawność,
+  zwięzłość, trafność pobieranych dokumentów, opóźnienie oraz zużycie tokenów.
+
+  Wyniki wskazują, że większa złożoność orkiestracji nie gwarantuje wyższej
+  jakości odpowiedzi. Architektura router--specjalista osiąga najwyższą średnią
+  wierność (0{,}811), a~deterministyczna -- najwyższą średnią poprawność
+  (0{,}716), obie przy koszcie porównywalnym z~najprostszymi układami.
+  Architektury hierarchiczna i~ReAct zużywają kilkukrotnie więcej tokenów bez
+  proporcjonalnego przyrostu jakości -- analiza jakościowa wskazuje, że dłuższe
+  ścieżki przetwarzania prowadzą do utraty kontroli nad kontekstem i~propagacji
+  błędu między modułami. Sformułowano wnioski praktyczne dotyczące doboru
+  architektury do przypadku użycia, opłacalności złożoności orkiestracji oraz
+  roli przygotowania danych jako czynnika warunkującego skuteczność systemu
+  niezależnie od topologii.
+
+  \bigskip
+  \noindent\textbf{Słowa kluczowe:} architektury agentowe, duże modele językowe, ewaluacja systemów, generowanie wspomagane wyszukiwaniem, systemy wieloagentowe
+\end{abstract}

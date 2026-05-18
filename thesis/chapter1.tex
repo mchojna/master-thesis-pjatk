@@ -1,0 +1,289 @@
+\chapter{Wprowadzenie}\label{chap:wprowadzenie}
+
+W~ostatnich latach badania w~dziedzinie sztucznej inteligencji przesunęły się
+z~analizy pojedynczych modeli na złożone systemy. Duże modele językowe
+(ang.~\textit{Large Language Models}, LLM) oparte na architekturze Transformer
+osiągają wysoką skuteczność w~generowaniu tekstu na podstawie ogólnej
+wiedzy~\cite{vaswani2017attention}, jednakże w~złożonych zadaniach wymagających
+wieloetapowego wnioskowania i~wiedzy dziedzinowej generacja tekstu jest
+niewystarczająca~\cite{brown2020language}. Rozwiązanie takich zadań wymaga
+wyszukiwania i~integracji informacji oraz formułowania wniosków na podstawie
+pobranych źródeł. Zmiana paradygmatu ukształtowała dziedzinę architektur
+agentowych, wykorzystywania zewnętrznych narzędzi~\cite{schick2023toolformer},
+generowania wspomaganego wyszukiwaniem (ang.~\textit{Retrieval-Augmented
+Generation}, RAG)~\cite{lewis2020retrieval} oraz protokołów
+orkiestracji~\cite{wang2024survey}. W~literaturze brakuje jednak kontrolowanych
+porównań wskazujących, kiedy dana architektura orkiestracji poprawia jakość
+wyników, a~kiedy generuje jedynie dodatkowy narzut obliczeniowy i~koszty
+operacyjne.
+
+\section{Motywacja i~problem badawczy}\label{sec:motywacja-i-problem-badawczy}
+
+Projektowanie systemów agentowych opartych na dużych modelach językowych do
+odpowiadania na pytania na podstawie obszernych zbiorów dokumentów pozostaje
+otwartym problemem badawczym. Modele wykazują wyższą skuteczność po wyposażeniu
+w~odpowiednie narzędzia i~ustrukturyzowany schemat
+wnioskowania~\cite{wang2024survey}.
+
+W~architekturze ReAct zaobserwowano, że przeplatanie etapów wnioskowania
+(ang.~\textit{reasoning traces}) z~wywołaniami narzędzi (ang.~\textit{tool
+calls}) zmniejsza liczbę halucynacji i~zwiększa skuteczność w~porównaniu do
+podejścia łańcucha myśli (ang.~\textit{chain-of-thought})~\cite{yao2022react}.
+Systemy wieloagentowe, takie jak AutoGen, udowodniły skuteczność podziału
+zadań~\cite{wu2024autogen}, natomiast system MetaGPT potwierdził wpływ
+specjalizacji ról na wyniki w~złożonych zadaniach~\cite{hong2023metagpt}.
+
+Architektury te rzadko podlegają jednak bezpośrednim porównaniom. Nowe
+rozwiązania zazwyczaj zestawia się z~modelem bazowym -- wyposażonym w~prostą
+instrukcję systemową (ang.~\textit{system prompt}) lub w~architekturze
+jednoprzebiegowego systemu RAG (ang.~\textit{single-pass RAG}). Podejście to
+uniemożliwia obiektywną ocenę struktur agentowych w~identycznych warunkach --
+przy wykorzystaniu tego samego modelu bazowego, zestawu narzędzi, korpusu
+danych i~metryk ewaluacyjnych.
+
+Brak ujednoliconych testów utrudnia syntezę wiedzy naukowej oraz projektowanie
+systemów produkcyjnych. Według Wang i~in. porównawcza ewaluacja topologii
+agentów w~stałych warunkach pozostaje problemem otwartym~\cite{wang2024survey}.
+Xi i~in. wskazują, że niespójność zadań, modeli bazowych i~metryk uniemożliwia
+porównywanie wyników pomiędzy publikacjami~\cite{xi2025rise}.
+
+Niniejsza praca podejmuje problem braku kontrolowanego porównania izolującego
+wpływ struktury agenta na poprawność odpowiedzi oraz koszty operacyjne podczas
+analizy ustrukturyzowanych dokumentów regulacyjnych. Badaniu poddano zależność
+między złożonością systemów wieloagentowych a~jakością uzyskiwanych odpowiedzi
+w~kontrolowanym środowisku testowym.
+
+Jako środowisko testowe wybrano polską dokumentację ubezpieczeniową. Ogólne
+Warunki Ubezpieczenia (OWU) oraz dokumenty zawierające informacje o~produkcie
+ubezpieczeniowym (IPID) stanowią trudną klasę tekstów dla systemów pytań
+i~odpowiedzi (ang.~\textit{Question Answering}, QA). Dokumenty te
+charakteryzują się specjalistycznym językiem prawniczo-ubezpieczeniowym,
+zawierają rozbudowane struktury warunków i~wyłączeń, a~kluczowe informacje są
+w~nich rozproszone. Wymusza to stosowanie mechanizmów wyszukiwania
+wieloskokowego i~wnioskowania warunkowego, co pozwala na miarodajne
+zróżnicowanie badanych architektur agentowych.
+
+Rysunek~\ref{fig:projekt-eksperymentu} przedstawia główne założenie
+eksperymentu: jedyną zmienną niezależną jest topologia agenta, podczas gdy
+model, narzędzia, korpus i~warstwa ewaluacyjna pozostają wspólne dla wszystkich
+wariantów.
+
+\begin{figure}[H]
+  \caption{Projekt eksperymentu}\label{fig:projekt-eksperymentu}
+  \centering
+  \begin{adjustbox}{max width=\textwidth}
+    \begin{tikzpicture}[
+        node distance=0.4cm and 0.25cm,
+        archbox/.style={
+          rectangle, draw, rounded corners=3pt,
+          text width=2.0cm, minimum height=1.25cm,
+          align=center, font=\small,
+          fill=violet!8, draw=violet!50
+        },
+        grouplabel/.style={
+          font=\small\bfseries,
+          fill=white, inner xsep=6pt, inner ysep=2pt
+        },
+        groupbox/.style={
+          rectangle, draw=gray!50, dashed,
+          rounded corners=5pt, inner sep=8pt
+        },
+        midbox/.style={
+          rectangle, draw, rounded corners=4pt,
+          inner sep=9pt, align=center, font=\small
+        },
+        arrow/.style={->, >=stealth, draw=gray!60}
+      ]
+
+      \node[archbox] (arch1) {Determi-\\nistyczna};
+      \node[archbox, right=of arch1] (arch2) {Planer--\\wykonawca};
+      \node[archbox, right=of arch2] (arch3) {Router--\\specjalista};
+      \node[archbox, right=of arch3] (arch4) {Tablicowa};
+      \node[archbox, right=of arch4] (arch5) {Hierar-\\chiczna};
+      \node[archbox, right=of arch5] (arch6) {ReAct};
+
+      \node[groupbox, fit=(arch1)(arch6)] (var_group) {};
+      \node[grouplabel] at (var_group.north)
+      {Zmienna niezależna: topologia systemu};
+
+      \node[midbox, fill=gray!7, draw=gray!40,
+      below=0.9cm of var_group] (baseline) {%
+        \textbf{Punkt odniesienia}\\[3pt]
+        Stały model bazowy \(\cdot\)
+        Stały zestaw narzędzi\\[2pt]
+        Stały indeks wektorowy\(\cdot\)
+        Stały zestaw testowy pytań
+      };
+
+      \node[midbox, fill=teal!7, draw=teal!40,
+      below=0.9cm of baseline] (eval) {%
+        \textbf{Warstwa ewaluacji}\\[3pt]
+        Wierność \(\cdot\)
+        Poprawność \(\cdot\)
+        Zwięzłość  \(\cdot\)
+        Trafność pobranych dokumentu\\[2pt]
+        Opóźnienie \(\cdot\)
+        Zużycie tokenów
+      };
+
+      \draw[arrow] (var_group.south) -- (baseline.north);
+      \draw[arrow] (baseline.south) -- (eval.north);
+
+    \end{tikzpicture}
+  \end{adjustbox}
+  \zrodlo{opracowanie własne}
+\end{figure}
+
+\clearpage{}
+
+\section{Pytania badawcze}\label{sec:pytania-badawcze}
+
+Pytania badawcze wynikają bezpośrednio z~luki opisanej
+w~\hyperref[sec:motywacja-i-problem-badawczy]{sekcji~\ref*{sec:motywacja-i-problem-badawczy}}
+i~odpowiadają czterem obszarom porównania: jakości odpowiedzi, stosunkowi
+kosztu do jakości, wpływowi strategii rozwiązywania pytań trudnych oraz
+charakterystyce błędów.
+
+\begin{description}
+  \item[Pytanie badawcze 1 (PB1):] W~jakim stopniu poszczególne architektury różnią się
+    pod względem wierności źródeł? Weryfikacji poddano poprawność merytoryczną
+    i~trafność pobieranych dokumentów w~kontrolowanym środowisku ze stałym modelem,
+    zestawem narzędzi, korpusem i~metrykami.
+
+  \item[Pytanie badawcze 2 (PB2):] Która topologia agentowa wykazuje optymalny stosunek
+    jakości do kosztów operacyjnych? Koszty operacyjne wyrażono poprzez opóźnienie
+    oraz zużycie tokenów. Analizie poddano również zmiany tego stosunku
+    w~zależności od stopnia trudności zadanego pytania.
+
+  \item[Pytanie badawcze 3 (PB3):] Jak mechanizmy planowania, trasowania
+    (ang.~\textit{routing}) i~podziału zadań wpływają na rozwiązywanie złożonych
+    problemów, w~tym na zestawianie warunków ochrony z~wyjątkami w~dokumentach?
+    Skuteczność mechanizmów porównano z~układami realizującymi wnioskowanie
+    w~pojedynczej ścieżce.
+
+  \item[Pytanie badawcze 4 (PB4):] Jakie rodzaje błędów wykazują poszczególne struktury
+    podczas analizy tekstów ustrukturyzowanych? Określono potencjalne źródła tych
+    błędów, w~tym ograniczenia okna kontekstowego, zakłócenia komunikacji między
+    modułami oraz kaskadową propagację błędów.
+\end{description}
+
+Tabela~\ref{tab:zestawienie-pytan-badawczych-hipotez-i-zrodel-danych} zestawia
+każde pytanie badawcze z~odpowiadającą mu hipotezą oraz wskazuje sekcje,
+w~których zgromadzono dane niezbędne do jej weryfikacji.
+
+\begin{table}[H]
+  \caption{Zestawienie pytań badawczych, hipotez i źródeł danych}\label{tab:zestawienie-pytan-badawczych-hipotez-i-zrodel-danych}
+  \centering
+  \small
+  \renewcommand{\arraystretch}{1.3}
+  \begin{tabularx}{\textwidth}{@{} l X X @{}}
+    \toprule
+    \textbf{Pytanie} & \textbf{Hipoteza}                                                         & \textbf{Źródło dowodów} \\
+    \midrule
+    PB1
+    & Bardziej złożone topologie zapewniają wyższą wierność odpowiedzi
+    w~porównaniu do prostych układów jednoagentowych
+    & Oceny jakościowe i~ilościowe, przekroje według trudności pytań
+    --- \hyperref[sec:wyniki-jakosciowe]{sekcja~\ref*{sec:wyniki-jakosciowe}}                                              \\
+    PB2
+    & Wzrost kosztów operacyjnych w~systemach wieloagentowych nie przekłada się
+    proporcjonalnie na przyrost jakości odpowiedzi
+    & Analiza zużycia tokenów i~opóźnień, oceny jakościowe
+    --- \hyperref[sec:wyniki-operacyjne]{sekcja~\ref*{sec:wyniki-operacyjne}},
+    \hyperref[sec:wyniki-jakosciowe]{\ref*{sec:wyniki-jakosciowe}}                                                         \\
+    PB3
+    & Dekompozycja zadań w~różnym stopniu poprawia skuteczność poszczególnych
+    architektur w~pytaniach wieloskokowych
+    & Przekroje według trudności pytań, analiza jakościowa przebiegów
+    --- \hyperref[sec:wyniki-jakosciowe]{sekcja~\ref*{sec:wyniki-jakosciowe}}                                              \\
+    PB4
+    & Różne architektury agentowe wykazują odmienne charakterystyki błędów
+    przy identycznych zadaniach
+    & Analiza jakościowa przebiegów, klasyfikacja niepowodzeń
+    --- \hyperref[subsec:charakterystyka-niepowodzen]{sekcja~\ref*{subsec:charakterystyka-niepowodzen}}                    \\
+    \bottomrule
+  \end{tabularx}
+  \zrodlo{opracowanie własne}
+\end{table}
+
+\section{Cele badawcze}\label{sec:cele-badawcze}
+
+Odpowiedź na postawione pytania badawcze wymagała zrealizowania czterech
+szczegółowych celów.
+
+\begin{description}
+  \item[Cel badawczy 1 (CB1):] Opracowano środowisko orkiestracji oparte na frameworku
+    LangGraph i~platformie ewaluacyjnej Arize Phoenix, w~którym zaimplementowano
+    sześć architektur agentowych. Umożliwiło to izolację topologii systemu jako
+    jedynej zmiennej niezależnej w~badaniu.
+
+  \item[Cel badawczy 2 (CB2):] Skonstruowano zestaw testowy dla branży
+    ubezpieczeniowej, składający się z~90 pytań opartych na dokumentach OWU i~IPID,
+    odzwierciedlających rzeczywiste zapytania użytkowników.
+
+  \item[Cel badawczy 3 (CB3):] Przeprowadzono ewaluację wszystkich wariantów przy
+    użyciu jednolitych metryk jakościowych (wierność, poprawność) i~operacyjnych.
+
+  \item[Cel badawczy 4 (CB4):] Przeanalizowano uzyskane dane w~celu identyfikacji cech
+    charakterystycznych badanych struktur oraz sformułowania rekomendacji dla
+    projektantów systemów produkcyjnych.
+\end{description}
+
+\section{Zakres i~ograniczenia}\label{sec:zakres}
+
+Eksperyment przeprowadzono w~zamkniętym środowisku testowym. Bazę wiedzy
+stanowiły 22~polskojęzyczne dokumenty ubezpieczeniowe, podzielone na 5108
+fragmentów tekstowych (ang.~\textit{chunks}). Architektury generowały
+odpowiedzi wyłącznie na podstawie tej bazy, bez dostępu do internetu
+i~zewnętrznych źródeł, co zagwarantowało izolację topologii agenta jako
+zmiennej niezależnej. Procedura testowa objęła zestaw 90~pytań oraz sześć
+architektur agentowych. Wszystkie systemy korzystały z~tego samego modelu
+językowego, identycznych narzędzi oraz identycznej bazy wektorowej,
+a~instrukcje systemowe zdefiniowano w~języku angielskim.
+
+Wyniki eksperymentu poddano analizie z~trzech perspektyw. Pierwsza obejmuje
+pomiary ilościowe (wierność, poprawność, zwięzłość, trafność pobieranych
+dokumentów oraz koszty operacyjne) dla wszystkich architektur. Druga
+perspektywa dotyczy analizy jakościowej przebiegów: sposobu konstrukcji
+odpowiedzi, utraty spójności kontekstu oraz charakterystycznych wzorców błędów.
+Trzecia perspektywa obejmuje rekomendacje praktyczne dotyczące doboru
+architektury, progu opłacalności orkiestracji oraz roli przygotowania danych
+w~zapewnieniu skuteczności systemu.
+
+W~badaniu oddzielono celowe decyzje projektowe od obiektywnych ograniczeń.
+Wybór jednego modelu bazowego i~stałego zestawu narzędzi stanowił warunek
+konieczny do izolacji wpływu struktury agentowej. Z~tego powodu zrezygnowano
+z~dostrajania modeli (ang.~\textit{fine-tuning}), obsługi wielu języków,
+indeksowania w~czasie rzeczywistym oraz testów z~udziałem użytkowników
+końcowych.
+
+Badanie ma trzy główne ograniczenia. Po pierwsze, zestaw 90~pytań nie
+wyczerpuje pełnego zakresu zapytań w~środowisku produkcyjnym. Po drugie, każdą
+architekturę uruchomiono jednokrotnie dla każdego pytania. Wszystkie wywołania
+(540 przebiegów agentowych i~ewaluacja metodą \textit{LLM-as-a-judge})
+zrealizowano przez płatne API OpenAI, co przy ograniczonym budżecie wykluczyło
+powtórzenia. Użycie modeli open-source lokalnie odrzucono ze względu na
+wymagania sprzętowe (infrastruktura GPU) dla dużych modeli oraz
+niewystarczającą jakość analizy polskich tekstów prawniczych przez modele
+mniejsze. Ustawienie temperatury modelu na zero oraz powtarzalny potok
+wyszukiwania miały na celu minimalizację wpływu losowości. Trzecim
+ograniczeniem jest automatyczna ewaluacja z~użyciem modelu jako sędziego
+(ang.~\textit{LLM-as-a-judge}), co wprowadza ryzyko błędów poznawczych modelu
+i~nie zastępuje weryfikacji eksperckiej. Wyników nie należy uogólniać na inne
+dziedziny bez dodatkowych badań.
+
+\section{Struktura pracy}\label{sec:struktura-pracy}
+
+Układ rozdziałów odpowiada kolejnym fazom badań.
+
+\begin{description}
+  \item[\Cref{chap:podstawy} -- Podstawy teoretyczne:] Omawia kluczowe pojęcia z~zakresu architektur agentowych i~systemów generowania wspomaganego wyszukiwaniem oraz charakteryzuje polską dokumentację ubezpieczeniową jako dziedzinę badawczą.
+
+  \item[\Cref{chap:metodologia} -- Metodologia:] Przedstawia założenia eksperymentu, sposób budowy korpusu i~zestawu testowego, przyjęte kryteria i~metryki oceny oraz warunki zapewniające porównywalność wyników między architekturami.
+
+  \item[\Cref{chap:implementacja} -- Implementacja:] Opisuje sposób realizacji sześciu architektur agentowych, zastosowane narzędzia, budowę bazy wektorowej oraz protokół ewaluacji przyjęty na potrzeby eksperymentu.
+
+  \item[\Cref{chap:eksperyment-i-wyniki} -- Eksperyment i wyniki:] Prezentuje wyniki 540~uruchomień z~podziałem na poziomy trudności pytań wraz z~analizą kosztów operacyjnych i~zestawieniem zaobserwowanych zachowań architektur.
+
+  \item[\Cref{chap:wnioski-i-zakonczenie} -- Wnioski i zakończenie:] Odpowiada na postawione pytania badawcze, formułuje rekomendacje dla praktyków projektujących systemy agentowe oraz wskazuje kierunki dalszych badań.
+\end{description}

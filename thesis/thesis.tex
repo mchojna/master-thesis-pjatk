@@ -1,0 +1,101 @@
+\documentclass{thesis}
+
+\usepackage{biblatex}
+
+\newcommand{\wydzial}{Wydzia\l{} Informatyki}
+\newcommand{\katedra}{Katedra System\'ow Inteligentnych i Data Science}
+\newcommand{\specjalizacja}{Data Science}
+\newcommand{\imienazwisko}{Micha\l{} Chojna}
+\newcommand{\nralbumu}{Nr albumu: s29758}
+\newcommand{\tytulpracy}{Analiza efektywno\'sci r\'o\.znych architektur wieloagentowych w analizie dokument\'ow ubezpieczeniowych}
+\newcommand{\rodzajpracy}{Praca magisterska}
+\newcommand{\promotor}{dr hab.\ Andrzej Wodecki, prof.\ PJATK}
+\newcommand{\miejscedata}{Warszawa, czerwiec 2026}
+
+\renewcommand{\maketitle}{%
+  \begin{alwayssingle}
+    \thispagestyle{empty}
+
+    \begin{center}
+      \vspace*{-1cm}
+      \includegraphics[width=0.95\textwidth]{PJATK_PL_poziom_1}
+    \end{center}
+
+    \vspace{2cm}
+
+    \begin{center}
+      {\fontsize{14}{17}\bfseries \wydzial} \\[1.2cm]
+      {\large\bfseries \katedra} \\[0.4cm]
+      {\large \specjalizacja}
+    \end{center}
+
+    \vspace{1.8cm}
+
+    \begin{center}
+      {\large\bfseries \imienazwisko} \\[0.2cm]
+      {\large \nralbumu}
+    \end{center}
+
+    \vspace{1.8cm}
+
+    \begin{center}
+      {\LARGE\bfseries \tytulpracy}
+    \end{center}
+
+    \vspace{2cm}
+
+    \hfill
+    \begin{minipage}{0.50\textwidth}
+      \begin{flushleft}
+        \rodzajpracy \\ [0.4cm]
+        \promotor
+      \end{flushleft}
+    \end{minipage}
+
+    \vfill
+
+    \begin{center}
+      \miejscedata
+    \end{center}
+
+  \end{alwayssingle}
+}
+
+\addbibresource{references.bib}
+
+\begin{document}
+
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+
+\maketitle
+
+\begin{romanpages}
+  \include{abstract}
+  \include{dedication}
+  \include{acknowledgements}
+  \tableofcontents
+\end{romanpages}
+
+\include{chapter1}
+\include{chapter2}
+\include{chapter3}
+\include{chapter4}
+\include{chapter5}
+\include{chapter6}
+
+\listoftables
+\addcontentsline{toc}{chapter}{Wykaz tabel}
+
+\listoffigures
+\addcontentsline{toc}{chapter}{Wykaz rysunk\'ow}
+
+\listof{wykres}{Wykaz wykres\'ow}
+\addcontentsline{toc}{chapter}{Wykaz wykres\'ow}
+
+\printbibliography[title={Bibliografia}, heading=bibintoc]
+
+\appendix
+\input{appendix}
+
+\end{document}
