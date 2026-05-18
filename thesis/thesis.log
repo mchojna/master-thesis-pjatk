@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.4.17)  18 MAY 2026 20:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.4.17)  18 MAY 2026 20:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/Users/mchojna/Documents/Repozytoria/master-thesis/thesis/thesis.tex
-(/Users/mchojna/Documents/Repozytoria/master-thesis/thesis/thesis.tex
+**/Users/mchojna/Documents/Repozytoria/master-thesis-pjatk/thesis/thesis.tex
+(/Users/mchojna/Documents/Repozytoria/master-thesis-pjatk/thesis/thesis.tex
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-03-20>
 (./thesis.cls
@@ -1846,12 +1846,12 @@ Package logreq Info: Writing requests to 'thesis.run.xml'.
  ) 
 Here is how much of TeX's memory you used:
  49729 strings out of 467349
- 1011641 string characters out of 5415635
+ 1011659 string characters out of 5415635
  2224754 words of memory out of 5000000
  76349 multiletter control sequences out of 15000+600000
  751342 words of font info for 544 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,14n,108p,1241b,2999s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,14n,108p,1247b,2999s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfit1000.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sftt0800.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
 Output written on thesis.pdf (133 pages, 1178592 bytes).
 PDF statistics:

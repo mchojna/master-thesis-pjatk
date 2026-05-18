@@ -1,8 +1,8 @@
-PWD /Users/mchojna/Documents/Repozytoria/master-thesis/thesis
+PWD /Users/mchojna/Documents/Repozytoria/master-thesis-pjatk/thesis
 INPUT /usr/local/texlive/2026/texmf.cnf
 INPUT /usr/local/texlive/2026/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2026/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT /Users/mchojna/Documents/Repozytoria/master-thesis/thesis/thesis.tex
+INPUT /Users/mchojna/Documents/Repozytoria/master-thesis-pjatk/thesis/thesis.tex
 OUTPUT thesis.log
 INPUT ./thesis.cls
 INPUT thesis.cls
