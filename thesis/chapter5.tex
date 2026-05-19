@@ -27,7 +27,7 @@ Tabela~\ref{tab:czas-wykonania} przedstawia rozkład czasu sekwencyjnego według
 architektur wraz z~udziałem procentowym oraz średnim czasem pojedynczego
 uruchomienia (z~odchyleniem standardowym). Architektura ReAct wykazała
 największy udział w~łącznym czasie sekwencyjnym (26,1\%), natomiast
-planer--wykonawca -- najmniejszy (12,1\%). Stanowi to interesujący paradoks 
+planer--wykonawca -- najmniejszy (12,1\%). Stanowi to interesujący paradoks
 wydajnościowy: mimo dodatkowego narzutu czasowego na generowanie planu,
 agent ten okazał się najszybszy w~ogólnej egzekucji (średnio 84{,}3~s),
 wyprzedzając pod tym względem nawet najprostszą architekturę deterministyczną
@@ -202,7 +202,7 @@ narzędzi przy najmniejszym odchyleniu (średnio 7{,}2 przy odchyleniu 0{,}8).
 
 \subsection{Fragmenty z~wyszukiwania i~cytowania}\label{subsec:fragmenty-i-cytowania}
 
-Tabela~\ref{tab:fragmenty-i-cytowania} zestawia średnie liczby fragmentów
+Tabela~\ref{tab:fragmenty-i-cytowania} przedstawia średnie liczby fragmentów
 pobranych z~bazy \texttt{Qdrant} oraz cytowań w~odpowiedzi końcowej wraz
 z~odchyleniami standardowymi. Kolumna \textit{Suma} podaje łączną liczbę
 fragmentów pobranych w~obrębie jednego uruchomienia -- w~architekturach
@@ -212,599 +212,599 @@ przy odchyleniu 4\,300, a~dla ReAct 154{,}5 przy odchyleniu 131{,}1.
 Architektury jednoagentowe pobierają 5 lub 15~fragmentów na uruchomienie przy
 zerowym lub minimalnym odchyleniu standardowym. W~architekturze ReAct liczba
 cytowań w~odpowiedzi końcowej jest niższa niż w~pozostałych wariantach (średnio
-w~przedziale 3{,}29--3{,}82.
+  w~przedziale 3{,}29--3{,}82.
 
-Szczególną anomalię odnotowano w~przypadku architektury planera--wykonawcy.
-Zgodnie z~tabelą~\ref{tab:fragmenty-i-cytowania}, po etapie oceny trafności
-w~stanie agenta pozostaje średnio zaledwie 0{,}31 fragmentu, co świadczy
-o~niezwykle rygorystycznym odrzucaniu pobranego kontekstu przez sędziego.
-Paradoksalnie, odpowiedź końcowa generowana przez tę architekturę posiada
-średnio aż 3{,}38 cytowania. Wskazuje to na iluzję filtrowania dowodów:
-moduł syntezy w~przypadku planera zignorował wyniki oceny trafności
-i~samodzielnie uwzględnił fragmenty (bądź wyhalucynował ich znaczniki),
-które na etapie oceny zostały z~kontekstu usunięte.
+  Szczególną anomalię odnotowano w~przypadku architektury planera--wykonawcy.
+  Zgodnie z~tabelą~\ref{tab:fragmenty-i-cytowania}, po etapie oceny trafności
+  w~stanie agenta pozostaje średnio zaledwie 0{,}31 fragmentu, co świadczy
+  o~niezwykle rygorystycznym odrzucaniu pobranego kontekstu przez sędziego.
+  Paradoksalnie, odpowiedź końcowa generowana przez tę architekturę posiada
+  średnio aż 3{,}38 cytowania. Wskazuje to na iluzję filtrowania dowodów:
+  moduł syntezy w~przypadku planera zignorował wyniki oceny trafności
+  i~samodzielnie uwzględnił fragmenty (bądź wyhalucynował ich znaczniki),
+  które na etapie oceny zostały z~kontekstu usunięte.
 
-\begin{table}[H]
-  \caption{Liczba fragmentów i~cytowań}\label{tab:fragmenty-i-cytowania}
-  \centering
-  \small
-  \renewcommand{\arraystretch}{1.3}
-  \begin{tabular}{@{} l r r r r @{}}
-    \toprule
-    \textbf{Architektura}
-    & \textbf{Na zapytanie}            & \textbf{Suma}                   & \textbf{Po ocenie trafności}    & \textbf{Cytowania}               \\
-    \midrule
-    Deterministyczna    & \textbf{4{,}28 (\(\pm\) 1{,}00)} & 15{,}0 (\(\pm\) 0{,}0)          & 4{,}28 (\(\pm\) 1{,}00)         & 3{,}72 (\(\pm\) 0{,}67)          \\
-    Planer--wykonawca   & 4{,}98 (\(\pm\) 0{,}15)          & \textbf{5{,}0 (\(\pm\) 0{,}0)}  & \textbf{0{,}31 (\(\pm\) 1{,}17)} & 3{,}38 (\(\pm\) 0{,}77)          \\
-    Router--specjalista & 4{,}33 (\(\pm\) 0{,}99)          & 14{,}4 (\(\pm\) 2{,}0)          & 4{,}33 (\(\pm\) 0{,}99)         & 3{,}67 (\(\pm\) 0{,}65)          \\
-    Tablicowa           & 4{,}30 (\(\pm\) 0{,}90)          & 15{,}0 (\(\pm\) 0{,}0)          & 4{,}30 (\(\pm\) 0{,}90)         & \textbf{3{,}74 (\(\pm\) 0{,}53)} \\
-    Hierarchiczna       & 4{,}70 (\(\pm\) 1{,}48)          & 1\,771{,}7 (\(\pm\) 4\,299{,}8) & 4{,}70 (\(\pm\) 1{,}48)         & 3{,}74 (\(\pm\) 0{,}71)          \\
-    ReAct               & 4{,}39 (\(\pm\) 1{,}07)          & 154{,}5 (\(\pm\) 131{,}1)       & 4{,}22 (\(\pm\) 1{,}32)         & 1{,}59 (\(\pm\) 1{,}69)          \\
-    \bottomrule
-  \end{tabular}
-  \zrodlo{opracowanie własne}
-\end{table}
+  \begin{table}[H]
+    \caption{Liczba fragmentów i~cytowań}\label{tab:fragmenty-i-cytowania}
+    \centering
+    \small
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabular}{@{} l r r r r @{}}
+      \toprule
+      \textbf{Architektura}
+      & \textbf{Na zapytanie}            & \textbf{Suma}                   & \textbf{Po ocenie trafności}    & \textbf{Cytowania}               \\
+      \midrule
+      Deterministyczna    & \textbf{4{,}28 (\(\pm\) 1{,}00)} & 15{,}0 (\(\pm\) 0{,}0)          & 4{,}28 (\(\pm\) 1{,}00)         & 3{,}72 (\(\pm\) 0{,}67)          \\
+      Planer--wykonawca   & 4{,}98 (\(\pm\) 0{,}15)          & \textbf{5{,}0 (\(\pm\) 0{,}0)}  & \textbf{0{,}31 (\(\pm\) 1{,}17)} & 3{,}38 (\(\pm\) 0{,}77)          \\
+      Router--specjalista & 4{,}33 (\(\pm\) 0{,}99)          & 14{,}4 (\(\pm\) 2{,}0)          & 4{,}33 (\(\pm\) 0{,}99)         & 3{,}67 (\(\pm\) 0{,}65)          \\
+      Tablicowa           & 4{,}30 (\(\pm\) 0{,}90)          & 15{,}0 (\(\pm\) 0{,}0)          & 4{,}30 (\(\pm\) 0{,}90)         & \textbf{3{,}74 (\(\pm\) 0{,}53)} \\
+      Hierarchiczna       & 4{,}70 (\(\pm\) 1{,}48)          & 1\,771{,}7 (\(\pm\) 4\,299{,}8) & 4{,}70 (\(\pm\) 1{,}48)         & 3{,}74 (\(\pm\) 0{,}71)          \\
+      ReAct               & 4{,}39 (\(\pm\) 1{,}07)          & 154{,}5 (\(\pm\) 131{,}1)       & 4{,}22 (\(\pm\) 1{,}32)         & 1{,}59 (\(\pm\) 1{,}69)          \\
+      \bottomrule
+    \end{tabular}
+    \zrodlo{opracowanie własne}
+  \end{table}
 
-\section{Wyniki jakościowe}\label{sec:wyniki-jakosciowe}
+  \section{Wyniki jakościowe}\label{sec:wyniki-jakosciowe}
 
-Poniższe podsekcje przedstawiają wartości czterech miar jakości w~rozbiciu na
-architekturę, poziom trudności pytania, kategorię produktową i~ubezpieczyciela.
-Liczebności podzbiorów wynoszą: 9~pytań bardzo prostych, 27~prostych,
-27~złożonych i~27~bardzo złożonych; 30~pytań na każdą kategorię produktową
-i~30~na każdego ubezpieczyciela. W~architekturze hierarchicznej poziom złożony
-obejmuje 26~pytań ze względu na pojedynczy błąd wykonania.
+  Poniższe podsekcje przedstawiają wartości czterech miar jakości w~rozbiciu na
+  architekturę, poziom trudności pytania, kategorię produktową i~ubezpieczyciela.
+  Liczebności podzbiorów wynoszą: 9~pytań bardzo prostych, 27~prostych,
+  27~złożonych i~27~bardzo złożonych; 30~pytań na każdą kategorię produktową
+  i~30~na każdego ubezpieczyciela. W~architekturze hierarchicznej poziom złożony
+  obejmuje 26~pytań ze względu na pojedynczy błąd wykonania.
 
-\subsection{Wierność}\label{subsec:wyniki-wiernosc}
+  \subsection{Wierność}\label{subsec:wyniki-wiernosc}
 
-Tabele~\ref{tab:wiernosc-trudnosc}--\ref{tab:wiernosc-ubezpieczyciel}
-przedstawiają średnią wierność odpowiedzi wraz z~odchyleniem standardowym
-w~rozbiciu na poziom trudności, kategorię produktową i~ubezpieczyciela.
-Najwyższą wartość łączną osiąga router--specjalista (0{,}811), najniższą ReAct
-(0{,}611). Dla wszystkich architektur wierność spada wraz ze wzrostem poziomu
-trudności pytania. W~rozbiciu według kategorii produktowej i~ubezpieczyciela
-rozpiętość wyników między architekturami pozostaje zbliżona do rozpiętości
-w~ujęciu łącznym, z~jednym silnym wyjątkiem. Architektura ReAct odnotowała
-katastrofalny spadek wierności w~kategorii ubezpieczeń mieszkaniowych,
-uzyskując zaledwie 0{,}433 (wobec 0{,}667 dla ubezpieczeń komunikacyjnych
-i~0{,}733 dla turystycznych). Wynik bliski losowości wskazuje na wybitną
-podatność pętli obserwacyjnej ReAct na dryf semantyczny w~kategoriach
-o~szerszym i~bardziej podatnym na wieloznaczność zakresie pojęciowym.
+  Tabele~\ref{tab:wiernosc-trudnosc}--\ref{tab:wiernosc-ubezpieczyciel}
+  przedstawiają średnią wierność odpowiedzi wraz z~odchyleniem standardowym
+  w~rozbiciu na poziom trudności, kategorię produktową i~ubezpieczyciela.
+  Najwyższą wartość łączną osiąga router--specjalista (0{,}811), najniższą ReAct
+  (0{,}611). Dla wszystkich architektur wierność spada wraz ze wzrostem poziomu
+  trudności pytania. W~rozbiciu według kategorii produktowej i~ubezpieczyciela
+  rozpiętość wyników między architekturami pozostaje zbliżona do rozpiętości
+  w~ujęciu łącznym, z~jednym silnym wyjątkiem. Architektura ReAct odnotowała
+  katastrofalny spadek wierności w~kategorii ubezpieczeń mieszkaniowych,
+  uzyskując zaledwie 0{,}433 (wobec 0{,}667 dla ubezpieczeń komunikacyjnych
+  i~0{,}733 dla turystycznych). Wynik bliski losowości wskazuje na wybitną
+  podatność pętli obserwacyjnej ReAct na dryf semantyczny w~kategoriach
+  o~szerszym i~bardziej podatnym na wieloznaczność zakresie pojęciowym.
 
-\begin{table}[H]
-  \caption{Wierność według poziomu trudności}\label{tab:wiernosc-trudnosc}
-  \centering
-  \footnotesize
-  \renewcommand{\arraystretch}{1.3}
-  \begin{tabular}{@{} l c c c c c @{}}
-    \toprule
-    \textbf{Architektura}
-    & \textbf{B.~proste}
-    & \textbf{Proste}
-    & \textbf{Złożone}
-    & \textbf{B.~złożone}
-    & \textbf{Łącznie}                                                                                                                                                                  \\
-    \midrule
-    Deterministyczna    & \textbf{0{,}889 (\(\pm\) 0{,}105)} & \textbf{0{,}852 (\(\pm\) 0{,}068)} & 0{,}741 (\(\pm\) 0{,}084)          & 0{,}704 (\(\pm\) 0{,}088)          & 0{,}778 (\(\pm\) 0{,}044)          \\
-    Planer--wykonawca   & 0{,}889 (\(\pm\) 0{,}105)          & 0{,}741 (\(\pm\) 0{,}084)          & \textbf{0{,}852 (\(\pm\) 0{,}068)} & 0{,}741 (\(\pm\) 0{,}084)          & 0{,}789 (\(\pm\) 0{,}043)          \\
-    Router--specjalista & 0{,}889 (\(\pm\) 0{,}105)          & 0{,}852 (\(\pm\) 0{,}068)          & 0{,}741 (\(\pm\) 0{,}084)          & \textbf{0{,}815 (\(\pm\) 0{,}075)} & \textbf{0{,}811 (\(\pm\) 0{,}041)} \\
-    Tablicowa           & 0{,}778 (\(\pm\) 0{,}139)          & 0{,}852 (\(\pm\) 0{,}068)          & 0{,}704 (\(\pm\) 0{,}088)          & 0{,}815 (\(\pm\) 0{,}075)          & 0{,}789 (\(\pm\) 0{,}043)          \\
-    Hierarchiczna       & 0{,}556 (\(\pm\) 0{,}166)          & 0{,}815 (\(\pm\) 0{,}075)          & 0{,}731 (\(\pm\) 0{,}087)          & 0{,}593 (\(\pm\) 0{,}095)          & 0{,}697 (\(\pm\) 0{,}049)          \\
-    ReAct               & 0{,}556 (\(\pm\) 0{,}166)          & 0{,}667 (\(\pm\) 0{,}091)          & 0{,}519 (\(\pm\) 0{,}096)          & 0{,}667 (\(\pm\) 0{,}091)          & 0{,}611 (\(\pm\) 0{,}051)          \\
-    \bottomrule
-  \end{tabular}
-  \zrodlo{opracowanie własne}
-\end{table}
+  \begin{table}[H]
+    \caption{Wierność według poziomu trudności}\label{tab:wiernosc-trudnosc}
+    \centering
+    \footnotesize
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabular}{@{} l c c c c c @{}}
+      \toprule
+      \textbf{Architektura}
+      & \textbf{B.~proste}
+      & \textbf{Proste}
+      & \textbf{Złożone}
+      & \textbf{B.~złożone}
+      & \textbf{Łącznie}                                                                                                                                                                  \\
+      \midrule
+      Deterministyczna    & \textbf{0{,}889 (\(\pm\) 0{,}105)} & \textbf{0{,}852 (\(\pm\) 0{,}068)} & 0{,}741 (\(\pm\) 0{,}084)          & 0{,}704 (\(\pm\) 0{,}088)          & 0{,}778 (\(\pm\) 0{,}044)          \\
+      Planer--wykonawca   & 0{,}889 (\(\pm\) 0{,}105)          & 0{,}741 (\(\pm\) 0{,}084)          & \textbf{0{,}852 (\(\pm\) 0{,}068)} & 0{,}741 (\(\pm\) 0{,}084)          & 0{,}789 (\(\pm\) 0{,}043)          \\
+      Router--specjalista & 0{,}889 (\(\pm\) 0{,}105)          & 0{,}852 (\(\pm\) 0{,}068)          & 0{,}741 (\(\pm\) 0{,}084)          & \textbf{0{,}815 (\(\pm\) 0{,}075)} & \textbf{0{,}811 (\(\pm\) 0{,}041)} \\
+      Tablicowa           & 0{,}778 (\(\pm\) 0{,}139)          & 0{,}852 (\(\pm\) 0{,}068)          & 0{,}704 (\(\pm\) 0{,}088)          & 0{,}815 (\(\pm\) 0{,}075)          & 0{,}789 (\(\pm\) 0{,}043)          \\
+      Hierarchiczna       & 0{,}556 (\(\pm\) 0{,}166)          & 0{,}815 (\(\pm\) 0{,}075)          & 0{,}731 (\(\pm\) 0{,}087)          & 0{,}593 (\(\pm\) 0{,}095)          & 0{,}697 (\(\pm\) 0{,}049)          \\
+      ReAct               & 0{,}556 (\(\pm\) 0{,}166)          & 0{,}667 (\(\pm\) 0{,}091)          & 0{,}519 (\(\pm\) 0{,}096)          & 0{,}667 (\(\pm\) 0{,}091)          & 0{,}611 (\(\pm\) 0{,}051)          \\
+      \bottomrule
+    \end{tabular}
+    \zrodlo{opracowanie własne}
+  \end{table}
 
-\begin{table}[H]
-  \caption{Wierność według kategorii produktowej}\label{tab:wiernosc-kategoria}
-  \centering
-  \small
-  \renewcommand{\arraystretch}{1.3}
-  \begin{tabular}{@{} l c c c c @{}}
-    \toprule
-    \textbf{Architektura}
-    & \textbf{Auto}
-    & \textbf{Mieszkanie}
-    & \textbf{Podróż}
-    & \textbf{Łącznie}                                                                                                                              \\
-    \midrule
-    Deterministyczna    & 0{,}800 (\(\pm\) 0{,}073)          & 0{,}800 (\(\pm\) 0{,}073)          & 0{,}733 (\(\pm\) 0{,}081)          & 0{,}778 (\(\pm\) 0{,}044)          \\
-    Planer--wykonawca   & 0{,}800 (\(\pm\) 0{,}073)          & \textbf{0{,}833 (\(\pm\) 0{,}068)} & 0{,}733 (\(\pm\) 0{,}081)          & 0{,}789 (\(\pm\) 0{,}043)          \\
-    Router--specjalista & 0{,}800 (\(\pm\) 0{,}073)          & 0{,}833 (\(\pm\) 0{,}068)          & \textbf{0{,}800 (\(\pm\) 0{,}073)} & \textbf{0{,}811 (\(\pm\) 0{,}041)} \\
-    Tablicowa           & \textbf{0{,}833 (\(\pm\) 0{,}068)} & 0{,}800 (\(\pm\) 0{,}073)          & 0{,}733 (\(\pm\) 0{,}081)          & 0{,}789 (\(\pm\) 0{,}043)          \\
-    Hierarchiczna       & 0{,}586 (\(\pm\) 0{,}091)          & 0{,}700 (\(\pm\) 0{,}084)          & 0{,}800 (\(\pm\) 0{,}073)          & 0{,}697 (\(\pm\) 0{,}049)          \\
-    ReAct               & 0{,}667 (\(\pm\) 0{,}086)          & 0{,}433 (\(\pm\) 0{,}090)          & 0{,}733 (\(\pm\) 0{,}081)          & 0{,}611 (\(\pm\) 0{,}051)          \\
-    \bottomrule
-  \end{tabular}
-  \zrodlo{opracowanie własne}
-\end{table}
+  \begin{table}[H]
+    \caption{Wierność według kategorii produktowej}\label{tab:wiernosc-kategoria}
+    \centering
+    \small
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabular}{@{} l c c c c @{}}
+      \toprule
+      \textbf{Architektura}
+      & \textbf{Auto}
+      & \textbf{Mieszkanie}
+      & \textbf{Podróż}
+      & \textbf{Łącznie}                                                                                                                              \\
+      \midrule
+      Deterministyczna    & 0{,}800 (\(\pm\) 0{,}073)          & 0{,}800 (\(\pm\) 0{,}073)          & 0{,}733 (\(\pm\) 0{,}081)          & 0{,}778 (\(\pm\) 0{,}044)          \\
+      Planer--wykonawca   & 0{,}800 (\(\pm\) 0{,}073)          & \textbf{0{,}833 (\(\pm\) 0{,}068)} & 0{,}733 (\(\pm\) 0{,}081)          & 0{,}789 (\(\pm\) 0{,}043)          \\
+      Router--specjalista & 0{,}800 (\(\pm\) 0{,}073)          & 0{,}833 (\(\pm\) 0{,}068)          & \textbf{0{,}800 (\(\pm\) 0{,}073)} & \textbf{0{,}811 (\(\pm\) 0{,}041)} \\
+      Tablicowa           & \textbf{0{,}833 (\(\pm\) 0{,}068)} & 0{,}800 (\(\pm\) 0{,}073)          & 0{,}733 (\(\pm\) 0{,}081)          & 0{,}789 (\(\pm\) 0{,}043)          \\
+      Hierarchiczna       & 0{,}586 (\(\pm\) 0{,}091)          & 0{,}700 (\(\pm\) 0{,}084)          & 0{,}800 (\(\pm\) 0{,}073)          & 0{,}697 (\(\pm\) 0{,}049)          \\
+      ReAct               & 0{,}667 (\(\pm\) 0{,}086)          & 0{,}433 (\(\pm\) 0{,}090)          & 0{,}733 (\(\pm\) 0{,}081)          & 0{,}611 (\(\pm\) 0{,}051)          \\
+      \bottomrule
+    \end{tabular}
+    \zrodlo{opracowanie własne}
+  \end{table}
 
-\begin{table}[H]
-  \caption{Wierność według ubezpieczyciela}\label{tab:wiernosc-ubezpieczyciel}
-  \centering
-  \small
-  \renewcommand{\arraystretch}{1.3}
-  \begin{tabular}{@{} l c c c c @{}}
-    \toprule
-    \textbf{Architektura}
-    & \textbf{Hestia}
-    & \textbf{PZU}
-    & \textbf{Warta}
-    & \textbf{Łącznie}                                                                                                                              \\
-    \midrule
-    Deterministyczna    & 0{,}700 (\(\pm\) 0{,}084)          & 0{,}800 (\(\pm\) 0{,}073)          & 0{,}833 (\(\pm\) 0{,}068)          & 0{,}778 (\(\pm\) 0{,}044)          \\
-    Planer--wykonawca   & 0{,}733 (\(\pm\) 0{,}081)          & 0{,}800 (\(\pm\) 0{,}073)          & 0{,}833 (\(\pm\) 0{,}068)          & 0{,}789 (\(\pm\) 0{,}043)          \\
-    Router--specjalista & 0{,}733 (\(\pm\) 0{,}081)          & 0{,}800 (\(\pm\) 0{,}073)          & \textbf{0{,}900 (\(\pm\) 0{,}055)} & \textbf{0{,}811 (\(\pm\) 0{,}041)} \\
-    Tablicowa           & \textbf{0{,}833 (\(\pm\) 0{,}068)} & 0{,}767 (\(\pm\) 0{,}077)          & 0{,}767 (\(\pm\) 0{,}077)          & 0{,}789 (\(\pm\) 0{,}043)          \\
-    Hierarchiczna       & 0{,}552 (\(\pm\) 0{,}092)          & \textbf{0{,}833 (\(\pm\) 0{,}068)} & 0{,}700 (\(\pm\) 0{,}084)          & 0{,}697 (\(\pm\) 0{,}049)          \\
-    ReAct               & 0{,}633 (\(\pm\) 0{,}088)          & 0{,}733 (\(\pm\) 0{,}081)          & 0{,}467 (\(\pm\) 0{,}091)          & 0{,}611 (\(\pm\) 0{,}051)          \\
-    \bottomrule
-  \end{tabular}
-  \zrodlo{opracowanie własne}
-\end{table}
+  \begin{table}[H]
+    \caption{Wierność według ubezpieczyciela}\label{tab:wiernosc-ubezpieczyciel}
+    \centering
+    \small
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabular}{@{} l c c c c @{}}
+      \toprule
+      \textbf{Architektura}
+      & \textbf{Hestia}
+      & \textbf{PZU}
+      & \textbf{Warta}
+      & \textbf{Łącznie}                                                                                                                              \\
+      \midrule
+      Deterministyczna    & 0{,}700 (\(\pm\) 0{,}084)          & 0{,}800 (\(\pm\) 0{,}073)          & 0{,}833 (\(\pm\) 0{,}068)          & 0{,}778 (\(\pm\) 0{,}044)          \\
+      Planer--wykonawca   & 0{,}733 (\(\pm\) 0{,}081)          & 0{,}800 (\(\pm\) 0{,}073)          & 0{,}833 (\(\pm\) 0{,}068)          & 0{,}789 (\(\pm\) 0{,}043)          \\
+      Router--specjalista & 0{,}733 (\(\pm\) 0{,}081)          & 0{,}800 (\(\pm\) 0{,}073)          & \textbf{0{,}900 (\(\pm\) 0{,}055)} & \textbf{0{,}811 (\(\pm\) 0{,}041)} \\
+      Tablicowa           & \textbf{0{,}833 (\(\pm\) 0{,}068)} & 0{,}767 (\(\pm\) 0{,}077)          & 0{,}767 (\(\pm\) 0{,}077)          & 0{,}789 (\(\pm\) 0{,}043)          \\
+      Hierarchiczna       & 0{,}552 (\(\pm\) 0{,}092)          & \textbf{0{,}833 (\(\pm\) 0{,}068)} & 0{,}700 (\(\pm\) 0{,}084)          & 0{,}697 (\(\pm\) 0{,}049)          \\
+      ReAct               & 0{,}633 (\(\pm\) 0{,}088)          & 0{,}733 (\(\pm\) 0{,}081)          & 0{,}467 (\(\pm\) 0{,}091)          & 0{,}611 (\(\pm\) 0{,}051)          \\
+      \bottomrule
+    \end{tabular}
+    \zrodlo{opracowanie własne}
+  \end{table}
 
-\subsection{Poprawność}\label{subsec:wyniki-poprawnosc}
+  \subsection{Poprawność}\label{subsec:wyniki-poprawnosc}
 
-Tabele~\ref{tab:poprawnosc-trudnosc}--\ref{tab:poprawnosc-ubezpieczyciel}
-przedstawiają średnią poprawność odpowiedzi wraz z~odchyleniem standardowym
-w~tym samym rozbiciu. Najwyższą wartość łączną odnotowano dla architektury
-deterministycznej (0{,}716), a~najniższą dla hierarchicznej (0{,}588).
-W~rozbiciu według poziomu trudności poprawność przyjmuje najwyższe wartości dla
-pytań prostych we wszystkich wariantach, natomiast w~przypadku pytań bardzo
-złożonych ulega obniżeniu. W~rozbiciu według kategorii produktowej architektura
-deterministyczna osiągnęła najwyższe wartości we wszystkich trzech grupach.
-W~rozbiciu według ubezpieczyciela nie zaobserwowano jednoznacznej tendencji
-w~wynikach poszczególnych architektur.
+  Tabele~\ref{tab:poprawnosc-trudnosc}--\ref{tab:poprawnosc-ubezpieczyciel}
+  przedstawiają średnią poprawność odpowiedzi wraz z~odchyleniem standardowym
+  w~tym samym rozbiciu. Najwyższą wartość łączną odnotowano dla architektury
+  deterministycznej (0{,}716), a~najniższą dla hierarchicznej (0{,}588).
+  W~rozbiciu według poziomu trudności poprawność przyjmuje najwyższe wartości dla
+  pytań prostych we wszystkich wariantach, natomiast w~przypadku pytań bardzo
+  złożonych ulega obniżeniu. W~rozbiciu według kategorii produktowej architektura
+  deterministyczna osiągnęła najwyższe wartości we wszystkich trzech grupach.
+  W~rozbiciu według ubezpieczyciela nie zaobserwowano jednoznacznej tendencji
+  w~wynikach poszczególnych architektur.
 
-\begin{table}[H]
-  \caption{Poprawność według poziomu trudności}\label{tab:poprawnosc-trudnosc}
-  \centering
-  \footnotesize
-  \renewcommand{\arraystretch}{1.3}
-  \begin{tabular}{@{} l c c c c c @{}}
-    \toprule
-    \textbf{Architektura}
-    & \textbf{B.~proste}
-    & \textbf{Proste}
-    & \textbf{Złożone}
-    & \textbf{B.~złożone}
-    & \textbf{Łącznie}                                                                                                                                                                  \\
-    \midrule
-    Deterministyczna    & \textbf{0{,}644 (\(\pm\) 0{,}132)} & \textbf{0{,}841 (\(\pm\) 0{,}055)} & \textbf{0{,}685 (\(\pm\) 0{,}077)} & \textbf{0{,}644 (\(\pm\) 0{,}067)} & \textbf{0{,}716 (\(\pm\) 0{,}038)} \\
-    Planer--wykonawca   & 0{,}578 (\(\pm\) 0{,}114)          & 0{,}681 (\(\pm\) 0{,}070)          & 0{,}596 (\(\pm\) 0{,}084)          & 0{,}596 (\(\pm\) 0{,}077)          & 0{,}620 (\(\pm\) 0{,}042)          \\
-    Router--specjalista & 0{,}611 (\(\pm\) 0{,}116)          & 0{,}830 (\(\pm\) 0{,}053)          & 0{,}633 (\(\pm\) 0{,}078)          & 0{,}544 (\(\pm\) 0{,}073)          & 0{,}663 (\(\pm\) 0{,}039)          \\
-    Tablicowa           & 0{,}544 (\(\pm\) 0{,}136)          & 0{,}807 (\(\pm\) 0{,}058)          & 0{,}633 (\(\pm\) 0{,}079)          & 0{,}489 (\(\pm\) 0{,}076)          & 0{,}633 (\(\pm\) 0{,}042)          \\
-    Hierarchiczna       & 0{,}567 (\(\pm\) 0{,}119)          & 0{,}678 (\(\pm\) 0{,}076)          & 0{,}608 (\(\pm\) 0{,}077)          & 0{,}485 (\(\pm\) 0{,}079)          & 0{,}588 (\(\pm\) 0{,}043)          \\
-    ReAct               & 0{,}633 (\(\pm\) 0{,}105)          & 0{,}704 (\(\pm\) 0{,}077)          & 0{,}567 (\(\pm\) 0{,}081)          & 0{,}515 (\(\pm\) 0{,}082)          & 0{,}599 (\(\pm\) 0{,}044)          \\
-    \bottomrule
-  \end{tabular}
-  \zrodlo{opracowanie własne}
-\end{table}
+  \begin{table}[H]
+    \caption{Poprawność według poziomu trudności}\label{tab:poprawnosc-trudnosc}
+    \centering
+    \footnotesize
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabular}{@{} l c c c c c @{}}
+      \toprule
+      \textbf{Architektura}
+      & \textbf{B.~proste}
+      & \textbf{Proste}
+      & \textbf{Złożone}
+      & \textbf{B.~złożone}
+      & \textbf{Łącznie}                                                                                                                                                                  \\
+      \midrule
+      Deterministyczna    & \textbf{0{,}644 (\(\pm\) 0{,}132)} & \textbf{0{,}841 (\(\pm\) 0{,}055)} & \textbf{0{,}685 (\(\pm\) 0{,}077)} & \textbf{0{,}644 (\(\pm\) 0{,}067)} & \textbf{0{,}716 (\(\pm\) 0{,}038)} \\
+      Planer--wykonawca   & 0{,}578 (\(\pm\) 0{,}114)          & 0{,}681 (\(\pm\) 0{,}070)          & 0{,}596 (\(\pm\) 0{,}084)          & 0{,}596 (\(\pm\) 0{,}077)          & 0{,}620 (\(\pm\) 0{,}042)          \\
+      Router--specjalista & 0{,}611 (\(\pm\) 0{,}116)          & 0{,}830 (\(\pm\) 0{,}053)          & 0{,}633 (\(\pm\) 0{,}078)          & 0{,}544 (\(\pm\) 0{,}073)          & 0{,}663 (\(\pm\) 0{,}039)          \\
+      Tablicowa           & 0{,}544 (\(\pm\) 0{,}136)          & 0{,}807 (\(\pm\) 0{,}058)          & 0{,}633 (\(\pm\) 0{,}079)          & 0{,}489 (\(\pm\) 0{,}076)          & 0{,}633 (\(\pm\) 0{,}042)          \\
+      Hierarchiczna       & 0{,}567 (\(\pm\) 0{,}119)          & 0{,}678 (\(\pm\) 0{,}076)          & 0{,}608 (\(\pm\) 0{,}077)          & 0{,}485 (\(\pm\) 0{,}079)          & 0{,}588 (\(\pm\) 0{,}043)          \\
+      ReAct               & 0{,}633 (\(\pm\) 0{,}105)          & 0{,}704 (\(\pm\) 0{,}077)          & 0{,}567 (\(\pm\) 0{,}081)          & 0{,}515 (\(\pm\) 0{,}082)          & 0{,}599 (\(\pm\) 0{,}044)          \\
+      \bottomrule
+    \end{tabular}
+    \zrodlo{opracowanie własne}
+  \end{table}
 
-\begin{table}[H]
-  \caption{Poprawność według kategorii produktowej}\label{tab:poprawnosc-kategoria}
-  \centering
-  \small
-  \renewcommand{\arraystretch}{1.3}
-  \begin{tabular}{@{} l c c c c @{}}
-    \toprule
-    \textbf{Architektura}
-    & \textbf{Auto}
-    & \textbf{Mieszkanie}
-    & \textbf{Podróż}
-    & \textbf{Łącznie}                                                                                                                              \\
-    \midrule
-    Deterministyczna    & \textbf{0{,}700 (\(\pm\) 0{,}068)} & 0{,}683 (\(\pm\) 0{,}076)          & \textbf{0{,}763 (\(\pm\) 0{,}052)} & \textbf{0{,}716 (\(\pm\) 0{,}038)} \\
-    Planer--wykonawca   & 0{,}547 (\(\pm\) 0{,}079)          & 0{,}660 (\(\pm\) 0{,}064)          & 0{,}653 (\(\pm\) 0{,}072)          & 0{,}620 (\(\pm\) 0{,}042)          \\
-    Router--specjalista & 0{,}593 (\(\pm\) 0{,}071)          & \textbf{0{,}690 (\(\pm\) 0{,}070)} & 0{,}707 (\(\pm\) 0{,}062)          & 0{,}663 (\(\pm\) 0{,}039)          \\
-    Tablicowa           & 0{,}667 (\(\pm\) 0{,}066)          & 0{,}603 (\(\pm\) 0{,}077)          & 0{,}630 (\(\pm\) 0{,}074)          & 0{,}633 (\(\pm\) 0{,}042)          \\
-    Hierarchiczna       & 0{,}562 (\(\pm\) 0{,}077)          & 0{,}570 (\(\pm\) 0{,}071)          & 0{,}630 (\(\pm\) 0{,}074)          & 0{,}588 (\(\pm\) 0{,}043)          \\
-    ReAct               & 0{,}630 (\(\pm\) 0{,}078)          & 0{,}463 (\(\pm\) 0{,}077)          & 0{,}703 (\(\pm\) 0{,}065)          & 0{,}599 (\(\pm\) 0{,}044)          \\
-    \bottomrule
-  \end{tabular}
-  \zrodlo{opracowanie własne}
-\end{table}
+  \begin{table}[H]
+    \caption{Poprawność według kategorii produktowej}\label{tab:poprawnosc-kategoria}
+    \centering
+    \small
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabular}{@{} l c c c c @{}}
+      \toprule
+      \textbf{Architektura}
+      & \textbf{Auto}
+      & \textbf{Mieszkanie}
+      & \textbf{Podróż}
+      & \textbf{Łącznie}                                                                                                                              \\
+      \midrule
+      Deterministyczna    & \textbf{0{,}700 (\(\pm\) 0{,}068)} & 0{,}683 (\(\pm\) 0{,}076)          & \textbf{0{,}763 (\(\pm\) 0{,}052)} & \textbf{0{,}716 (\(\pm\) 0{,}038)} \\
+      Planer--wykonawca   & 0{,}547 (\(\pm\) 0{,}079)          & 0{,}660 (\(\pm\) 0{,}064)          & 0{,}653 (\(\pm\) 0{,}072)          & 0{,}620 (\(\pm\) 0{,}042)          \\
+      Router--specjalista & 0{,}593 (\(\pm\) 0{,}071)          & \textbf{0{,}690 (\(\pm\) 0{,}070)} & 0{,}707 (\(\pm\) 0{,}062)          & 0{,}663 (\(\pm\) 0{,}039)          \\
+      Tablicowa           & 0{,}667 (\(\pm\) 0{,}066)          & 0{,}603 (\(\pm\) 0{,}077)          & 0{,}630 (\(\pm\) 0{,}074)          & 0{,}633 (\(\pm\) 0{,}042)          \\
+      Hierarchiczna       & 0{,}562 (\(\pm\) 0{,}077)          & 0{,}570 (\(\pm\) 0{,}071)          & 0{,}630 (\(\pm\) 0{,}074)          & 0{,}588 (\(\pm\) 0{,}043)          \\
+      ReAct               & 0{,}630 (\(\pm\) 0{,}078)          & 0{,}463 (\(\pm\) 0{,}077)          & 0{,}703 (\(\pm\) 0{,}065)          & 0{,}599 (\(\pm\) 0{,}044)          \\
+      \bottomrule
+    \end{tabular}
+    \zrodlo{opracowanie własne}
+  \end{table}
 
-\begin{table}[H]
-  \caption{Poprawność według ubezpieczyciela}\label{tab:poprawnosc-ubezpieczyciel}
-  \centering
-  \small
-  \renewcommand{\arraystretch}{1.3}
-  \begin{tabular}{@{} l c c c c @{}}
-    \toprule
-    \textbf{Architektura}
-    & \textbf{Hestia}
-    & \textbf{PZU}
-    & \textbf{Warta}
-    & \textbf{Łącznie}                                                                                                                              \\
-    \midrule
-    Deterministyczna    & 0{,}693 (\(\pm\) 0{,}072)          & \textbf{0{,}793 (\(\pm\) 0{,}057)} & \textbf{0{,}660 (\(\pm\) 0{,}066)} & \textbf{0{,}716 (\(\pm\) 0{,}038)} \\
-    Planer--wykonawca   & 0{,}697 (\(\pm\) 0{,}069)          & 0{,}640 (\(\pm\) 0{,}066)          & 0{,}523 (\(\pm\) 0{,}078)          & 0{,}620 (\(\pm\) 0{,}042)          \\
-    Router--specjalista & 0{,}673 (\(\pm\) 0{,}070)          & 0{,}750 (\(\pm\) 0{,}060)          & 0{,}567 (\(\pm\) 0{,}070)          & 0{,}663 (\(\pm\) 0{,}039)          \\
-    Tablicowa           & 0{,}683 (\(\pm\) 0{,}076)          & 0{,}623 (\(\pm\) 0{,}073)          & 0{,}593 (\(\pm\) 0{,}068)          & 0{,}633 (\(\pm\) 0{,}042)          \\
-    Hierarchiczna       & 0{,}603 (\(\pm\) 0{,}078)          & 0{,}707 (\(\pm\) 0{,}065)          & 0{,}453 (\(\pm\) 0{,}072)          & 0{,}588 (\(\pm\) 0{,}043)          \\
-    ReAct               & \textbf{0{,}720 (\(\pm\) 0{,}072)} & 0{,}567 (\(\pm\) 0{,}080)          & 0{,}510 (\(\pm\) 0{,}070)          & 0{,}599 (\(\pm\) 0{,}044)          \\
-    \bottomrule
-  \end{tabular}
-  \zrodlo{opracowanie własne}
-\end{table}
+  \begin{table}[H]
+    \caption{Poprawność według ubezpieczyciela}\label{tab:poprawnosc-ubezpieczyciel}
+    \centering
+    \small
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabular}{@{} l c c c c @{}}
+      \toprule
+      \textbf{Architektura}
+      & \textbf{Hestia}
+      & \textbf{PZU}
+      & \textbf{Warta}
+      & \textbf{Łącznie}                                                                                                                              \\
+      \midrule
+      Deterministyczna    & 0{,}693 (\(\pm\) 0{,}072)          & \textbf{0{,}793 (\(\pm\) 0{,}057)} & \textbf{0{,}660 (\(\pm\) 0{,}066)} & \textbf{0{,}716 (\(\pm\) 0{,}038)} \\
+      Planer--wykonawca   & 0{,}697 (\(\pm\) 0{,}069)          & 0{,}640 (\(\pm\) 0{,}066)          & 0{,}523 (\(\pm\) 0{,}078)          & 0{,}620 (\(\pm\) 0{,}042)          \\
+      Router--specjalista & 0{,}673 (\(\pm\) 0{,}070)          & 0{,}750 (\(\pm\) 0{,}060)          & 0{,}567 (\(\pm\) 0{,}070)          & 0{,}663 (\(\pm\) 0{,}039)          \\
+      Tablicowa           & 0{,}683 (\(\pm\) 0{,}076)          & 0{,}623 (\(\pm\) 0{,}073)          & 0{,}593 (\(\pm\) 0{,}068)          & 0{,}633 (\(\pm\) 0{,}042)          \\
+      Hierarchiczna       & 0{,}603 (\(\pm\) 0{,}078)          & 0{,}707 (\(\pm\) 0{,}065)          & 0{,}453 (\(\pm\) 0{,}072)          & 0{,}588 (\(\pm\) 0{,}043)          \\
+      ReAct               & \textbf{0{,}720 (\(\pm\) 0{,}072)} & 0{,}567 (\(\pm\) 0{,}080)          & 0{,}510 (\(\pm\) 0{,}070)          & 0{,}599 (\(\pm\) 0{,}044)          \\
+      \bottomrule
+    \end{tabular}
+    \zrodlo{opracowanie własne}
+  \end{table}
 
-Szczegółowa analiza wyników poprawności w~zestawieniu z~wynikami trafności
-dokumentów (tabela~\ref{tab:trafnosc-ubezpieczyciel}) uwidacznia interesujący
-paradoks. Trafność pobierania dla dokumentów ubezpieczyciela Hestia jest
-systematycznie wyższa (od 0{,}406 do 0{,}480) niż dla dokumentów PZU
-(od 0{,}270 do 0{,}342). Jednakże w~przypadku wiodących architektur to właśnie
-pytania dotyczące PZU osiągają najwyższą poprawność w~fazie syntezy (0{,}793
-w~architekturze deterministycznej), podczas gdy dla Hestii wartości te są
-niższe (0{,}693). Sugeruje to, że dokumenty Hestii charakteryzują się formą
-sprzyjającą wyszukiwaniu wektorowemu (być może lepszą strukturą pojęciową),
-lecz trudniejszą do interpretacji przez model LLM, podczas gdy dokumenty PZU,
-mimo trudniejszego pozycjonowania w~przestrzeni osadzeń, posiadają zapisy,
-z~których łatwiej wydedukować jednoznaczną i~poprawną odpowiedź.
+  Szczegółowa analiza wyników poprawności w~zestawieniu z~wynikami trafności
+  dokumentów (tabela~\ref{tab:trafnosc-ubezpieczyciel}) uwidacznia interesujący
+  paradoks. Trafność pobierania dla dokumentów ubezpieczyciela Hestia jest
+  systematycznie wyższa (od 0{,}406 do 0{,}480) niż dla dokumentów PZU
+  (od 0{,}270 do 0{,}342). Jednakże w~przypadku wiodących architektur to właśnie
+  pytania dotyczące PZU osiągają najwyższą poprawność w~fazie syntezy (0{,}793
+  w~architekturze deterministycznej), podczas gdy dla Hestii wartości te są
+  niższe (0{,}693). Sugeruje to, że dokumenty Hestii charakteryzują się formą
+  sprzyjającą wyszukiwaniu wektorowemu (być może lepszą strukturą pojęciową),
+  lecz trudniejszą do interpretacji przez model LLM, podczas gdy dokumenty PZU,
+  mimo trudniejszego pozycjonowania w~przestrzeni osadzeń, posiadają zapisy,
+  z~których łatwiej wydedukować jednoznaczną i~poprawną odpowiedź.
 
-\subsection{Zwięzłość}\label{subsec:wyniki-zwiezlosc}
+  \subsection{Zwięzłość}\label{subsec:wyniki-zwiezlosc}
 
-Tabele~\ref{tab:zwiezlosc-trudnosc}--\ref{tab:zwiezlosc-ubezpieczyciel}
-przedstawiają średnią zwięzłość odpowiedzi wraz z~odchyleniem standardowym.
-Wartości są bardziej zbliżone do siebie pomiędzy architekturami niż w~przypadku
-wierności i~poprawności -- mieszczą się w~przedziale 0{,}631--0{,}682.
-Najwyższą wartość łączną odnotowano dla wariantu ReAct (0{,}682), a~najniższą
-dla architektury deterministycznej (0{,}631). W~rozbiciu według poziomu
-trudności wartości zwięzłości nie wykazują jednoznacznej tendencji. W~rozbiciu
-według kategorii i~ubezpieczyciela różnice między architekturami pozostają
-niewielkie.
+  Tabele~\ref{tab:zwiezlosc-trudnosc}--\ref{tab:zwiezlosc-ubezpieczyciel}
+  przedstawiają średnią zwięzłość odpowiedzi wraz z~odchyleniem standardowym.
+  Wartości są bardziej zbliżone do siebie pomiędzy architekturami niż w~przypadku
+  wierności i~poprawności -- mieszczą się w~przedziale 0{,}631--0{,}682.
+  Najwyższą wartość łączną odnotowano dla wariantu ReAct (0{,}682), a~najniższą
+  dla architektury deterministycznej (0{,}631). W~rozbiciu według poziomu
+  trudności wartości zwięzłości nie wykazują jednoznacznej tendencji. W~rozbiciu
+  według kategorii i~ubezpieczyciela różnice między architekturami pozostają
+  niewielkie.
 
-\begin{table}[H]
-  \caption{Zwięzłość według poziomu trudności}\label{tab:zwiezlosc-trudnosc}
-  \centering
-  \footnotesize
-  \renewcommand{\arraystretch}{1.3}
-  \begin{tabular}{@{} l c c c c c @{}}
-    \toprule
-    \textbf{Architektura}
-    & \textbf{B.~proste}
-    & \textbf{Proste}
-    & \textbf{Złożone}
-    & \textbf{B.~złożone}
-    & \textbf{Łącznie}                                                                                                                                                                  \\
-    \midrule
-    Deterministyczna    & 0{,}544 (\(\pm\) 0{,}050)          & 0{,}630 (\(\pm\) 0{,}033)          & 0{,}648 (\(\pm\) 0{,}039)          & 0{,}644 (\(\pm\) 0{,}033)          & 0{,}631 (\(\pm\) 0{,}019)          \\
-    Planer--wykonawca   & 0{,}667 (\(\pm\) 0{,}050)          & 0{,}637 (\(\pm\) 0{,}039)          & 0{,}630 (\(\pm\) 0{,}037)          & 0{,}689 (\(\pm\) 0{,}038)          & 0{,}653 (\(\pm\) 0{,}021)          \\
-    Router--specjalista & \textbf{0{,}700 (\(\pm\) 0{,}047)} & 0{,}659 (\(\pm\) 0{,}031)          & 0{,}674 (\(\pm\) 0{,}035)          & 0{,}581 (\(\pm\) 0{,}037)          & 0{,}644 (\(\pm\) 0{,}019)          \\
-    Tablicowa           & 0{,}678 (\(\pm\) 0{,}060)          & 0{,}674 (\(\pm\) 0{,}035)          & 0{,}626 (\(\pm\) 0{,}039)          & 0{,}652 (\(\pm\) 0{,}039)          & 0{,}653 (\(\pm\) 0{,}021)          \\
-    Hierarchiczna       & 0{,}700 (\(\pm\) 0{,}047)          & \textbf{0{,}700 (\(\pm\) 0{,}038)} & \textbf{0{,}700 (\(\pm\) 0{,}037)} & 0{,}622 (\(\pm\) 0{,}040)          & 0{,}676 (\(\pm\) 0{,}021)          \\
-    ReAct               & 0{,}611 (\(\pm\) 0{,}060)          & 0{,}685 (\(\pm\) 0{,}035)          & 0{,}689 (\(\pm\) 0{,}034)          & \textbf{0{,}696 (\(\pm\) 0{,}041)} & \textbf{0{,}682 (\(\pm\) 0{,}020)} \\
-    \bottomrule
-  \end{tabular}
-  \zrodlo{opracowanie własne}
-\end{table}
+  \begin{table}[H]
+    \caption{Zwięzłość według poziomu trudności}\label{tab:zwiezlosc-trudnosc}
+    \centering
+    \footnotesize
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabular}{@{} l c c c c c @{}}
+      \toprule
+      \textbf{Architektura}
+      & \textbf{B.~proste}
+      & \textbf{Proste}
+      & \textbf{Złożone}
+      & \textbf{B.~złożone}
+      & \textbf{Łącznie}                                                                                                                                                                  \\
+      \midrule
+      Deterministyczna    & 0{,}544 (\(\pm\) 0{,}050)          & 0{,}630 (\(\pm\) 0{,}033)          & 0{,}648 (\(\pm\) 0{,}039)          & 0{,}644 (\(\pm\) 0{,}033)          & 0{,}631 (\(\pm\) 0{,}019)          \\
+      Planer--wykonawca   & 0{,}667 (\(\pm\) 0{,}050)          & 0{,}637 (\(\pm\) 0{,}039)          & 0{,}630 (\(\pm\) 0{,}037)          & 0{,}689 (\(\pm\) 0{,}038)          & 0{,}653 (\(\pm\) 0{,}021)          \\
+      Router--specjalista & \textbf{0{,}700 (\(\pm\) 0{,}047)} & 0{,}659 (\(\pm\) 0{,}031)          & 0{,}674 (\(\pm\) 0{,}035)          & 0{,}581 (\(\pm\) 0{,}037)          & 0{,}644 (\(\pm\) 0{,}019)          \\
+      Tablicowa           & 0{,}678 (\(\pm\) 0{,}060)          & 0{,}674 (\(\pm\) 0{,}035)          & 0{,}626 (\(\pm\) 0{,}039)          & 0{,}652 (\(\pm\) 0{,}039)          & 0{,}653 (\(\pm\) 0{,}021)          \\
+      Hierarchiczna       & 0{,}700 (\(\pm\) 0{,}047)          & \textbf{0{,}700 (\(\pm\) 0{,}038)} & \textbf{0{,}700 (\(\pm\) 0{,}037)} & 0{,}622 (\(\pm\) 0{,}040)          & 0{,}676 (\(\pm\) 0{,}021)          \\
+      ReAct               & 0{,}611 (\(\pm\) 0{,}060)          & 0{,}685 (\(\pm\) 0{,}035)          & 0{,}689 (\(\pm\) 0{,}034)          & \textbf{0{,}696 (\(\pm\) 0{,}041)} & \textbf{0{,}682 (\(\pm\) 0{,}020)} \\
+      \bottomrule
+    \end{tabular}
+    \zrodlo{opracowanie własne}
+  \end{table}
 
-\begin{table}[H]
-  \caption{Zwięzłość według kategorii produktowej}\label{tab:zwiezlosc-kategoria}
-  \centering
-  \small
-  \renewcommand{\arraystretch}{1.3}
-  \begin{tabular}{@{} l c c c c @{}}
-    \toprule
-    \textbf{Architektura}
-    & \textbf{Auto}
-    & \textbf{Mieszkanie}
-    & \textbf{Podróż}
-    & \textbf{Łącznie}                                                                                                                              \\
-    \midrule
-    Deterministyczna    & 0{,}610 (\(\pm\) 0{,}035)          & 0{,}630 (\(\pm\) 0{,}034)          & 0{,}653 (\(\pm\) 0{,}029)          & 0{,}631 (\(\pm\) 0{,}019)          \\
-    Planer--wykonawca   & 0{,}700 (\(\pm\) 0{,}038)          & 0{,}613 (\(\pm\) 0{,}032)          & 0{,}647 (\(\pm\) 0{,}035)          & 0{,}653 (\(\pm\) 0{,}021)          \\
-    Router--specjalista & 0{,}617 (\(\pm\) 0{,}034)          & \textbf{0{,}673 (\(\pm\) 0{,}031)} & 0{,}643 (\(\pm\) 0{,}033)          & 0{,}644 (\(\pm\) 0{,}019)          \\
-    Tablicowa           & 0{,}657 (\(\pm\) 0{,}035)          & 0{,}623 (\(\pm\) 0{,}037)          & 0{,}680 (\(\pm\) 0{,}034)          & 0{,}653 (\(\pm\) 0{,}021)          \\
-    Hierarchiczna       & 0{,}679 (\(\pm\) 0{,}031)          & 0{,}640 (\(\pm\) 0{,}038)          & \textbf{0{,}710 (\(\pm\) 0{,}038)} & 0{,}676 (\(\pm\) 0{,}021)          \\
-    ReAct               & \textbf{0{,}737 (\(\pm\) 0{,}031)} & 0{,}660 (\(\pm\) 0{,}039)          & 0{,}650 (\(\pm\) 0{,}033)          & \textbf{0{,}682 (\(\pm\) 0{,}020)} \\
-    \bottomrule
-  \end{tabular}
-  \zrodlo{opracowanie własne}
-\end{table}
+  \begin{table}[H]
+    \caption{Zwięzłość według kategorii produktowej}\label{tab:zwiezlosc-kategoria}
+    \centering
+    \small
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabular}{@{} l c c c c @{}}
+      \toprule
+      \textbf{Architektura}
+      & \textbf{Auto}
+      & \textbf{Mieszkanie}
+      & \textbf{Podróż}
+      & \textbf{Łącznie}                                                                                                                              \\
+      \midrule
+      Deterministyczna    & 0{,}610 (\(\pm\) 0{,}035)          & 0{,}630 (\(\pm\) 0{,}034)          & 0{,}653 (\(\pm\) 0{,}029)          & 0{,}631 (\(\pm\) 0{,}019)          \\
+      Planer--wykonawca   & 0{,}700 (\(\pm\) 0{,}038)          & 0{,}613 (\(\pm\) 0{,}032)          & 0{,}647 (\(\pm\) 0{,}035)          & 0{,}653 (\(\pm\) 0{,}021)          \\
+      Router--specjalista & 0{,}617 (\(\pm\) 0{,}034)          & \textbf{0{,}673 (\(\pm\) 0{,}031)} & 0{,}643 (\(\pm\) 0{,}033)          & 0{,}644 (\(\pm\) 0{,}019)          \\
+      Tablicowa           & 0{,}657 (\(\pm\) 0{,}035)          & 0{,}623 (\(\pm\) 0{,}037)          & 0{,}680 (\(\pm\) 0{,}034)          & 0{,}653 (\(\pm\) 0{,}021)          \\
+      Hierarchiczna       & 0{,}679 (\(\pm\) 0{,}031)          & 0{,}640 (\(\pm\) 0{,}038)          & \textbf{0{,}710 (\(\pm\) 0{,}038)} & 0{,}676 (\(\pm\) 0{,}021)          \\
+      ReAct               & \textbf{0{,}737 (\(\pm\) 0{,}031)} & 0{,}660 (\(\pm\) 0{,}039)          & 0{,}650 (\(\pm\) 0{,}033)          & \textbf{0{,}682 (\(\pm\) 0{,}020)} \\
+      \bottomrule
+    \end{tabular}
+    \zrodlo{opracowanie własne}
+  \end{table}
 
-\begin{table}[H]
-  \caption{Zwięzłość według ubezpieczyciela}\label{tab:zwiezlosc-ubezpieczyciel}
-  \centering
-  \small
-  \renewcommand{\arraystretch}{1.3}
-  \begin{tabular}{@{} l c c c c @{}}
-    \toprule
-    \textbf{Architektura}
-    & \textbf{Hestia}
-    & \textbf{PZU}
-    & \textbf{Warta}
-    & \textbf{Łącznie}                                                                                                                              \\
-    \midrule
-    Deterministyczna    & 0{,}647 (\(\pm\) 0{,}031)          & 0{,}597 (\(\pm\) 0{,}033)          & 0{,}650 (\(\pm\) 0{,}035)          & 0{,}631 (\(\pm\) 0{,}019)          \\
-    Planer--wykonawca   & 0{,}633 (\(\pm\) 0{,}033)          & 0{,}673 (\(\pm\) 0{,}039)          & 0{,}653 (\(\pm\) 0{,}035)          & 0{,}653 (\(\pm\) 0{,}021)          \\
-    Router--specjalista & 0{,}660 (\(\pm\) 0{,}027)          & 0{,}640 (\(\pm\) 0{,}031)          & 0{,}633 (\(\pm\) 0{,}039)          & 0{,}644 (\(\pm\) 0{,}019)          \\
-    Tablicowa           & \textbf{0{,}697 (\(\pm\) 0{,}035)} & 0{,}653 (\(\pm\) 0{,}036)          & 0{,}610 (\(\pm\) 0{,}034)          & 0{,}653 (\(\pm\) 0{,}021)          \\
-    Hierarchiczna       & 0{,}690 (\(\pm\) 0{,}035)          & 0{,}670 (\(\pm\) 0{,}033)          & 0{,}670 (\(\pm\) 0{,}040)          & 0{,}676 (\(\pm\) 0{,}021)          \\
-    ReAct               & 0{,}647 (\(\pm\) 0{,}031)          & \textbf{0{,}697 (\(\pm\) 0{,}040)} & \textbf{0{,}703 (\(\pm\) 0{,}033)} & \textbf{0{,}682 (\(\pm\) 0{,}020)} \\
-    \bottomrule
-  \end{tabular}
-  \zrodlo{opracowanie własne}
-\end{table}
+  \begin{table}[H]
+    \caption{Zwięzłość według ubezpieczyciela}\label{tab:zwiezlosc-ubezpieczyciel}
+    \centering
+    \small
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabular}{@{} l c c c c @{}}
+      \toprule
+      \textbf{Architektura}
+      & \textbf{Hestia}
+      & \textbf{PZU}
+      & \textbf{Warta}
+      & \textbf{Łącznie}                                                                                                                              \\
+      \midrule
+      Deterministyczna    & 0{,}647 (\(\pm\) 0{,}031)          & 0{,}597 (\(\pm\) 0{,}033)          & 0{,}650 (\(\pm\) 0{,}035)          & 0{,}631 (\(\pm\) 0{,}019)          \\
+      Planer--wykonawca   & 0{,}633 (\(\pm\) 0{,}033)          & 0{,}673 (\(\pm\) 0{,}039)          & 0{,}653 (\(\pm\) 0{,}035)          & 0{,}653 (\(\pm\) 0{,}021)          \\
+      Router--specjalista & 0{,}660 (\(\pm\) 0{,}027)          & 0{,}640 (\(\pm\) 0{,}031)          & 0{,}633 (\(\pm\) 0{,}039)          & 0{,}644 (\(\pm\) 0{,}019)          \\
+      Tablicowa           & \textbf{0{,}697 (\(\pm\) 0{,}035)} & 0{,}653 (\(\pm\) 0{,}036)          & 0{,}610 (\(\pm\) 0{,}034)          & 0{,}653 (\(\pm\) 0{,}021)          \\
+      Hierarchiczna       & 0{,}690 (\(\pm\) 0{,}035)          & 0{,}670 (\(\pm\) 0{,}033)          & 0{,}670 (\(\pm\) 0{,}040)          & 0{,}676 (\(\pm\) 0{,}021)          \\
+      ReAct               & 0{,}647 (\(\pm\) 0{,}031)          & \textbf{0{,}697 (\(\pm\) 0{,}040)} & \textbf{0{,}703 (\(\pm\) 0{,}033)} & \textbf{0{,}682 (\(\pm\) 0{,}020)} \\
+      \bottomrule
+    \end{tabular}
+    \zrodlo{opracowanie własne}
+  \end{table}
 
-\subsection{Trafność dokumentów}\label{subsec:wyniki-trafnosc}
+  \subsection{Trafność dokumentów}\label{subsec:wyniki-trafnosc}
 
-Trafność dokumentów oceniano na poziomie pojedynczego cytowania -- łącznie
-1\,786~par pytanie--fragment.
-Tabele~\ref{tab:trafnosc-trudnosc}--\ref{tab:trafnosc-ubezpieczyciel} podają
-średnie arytmetyczne ocen binarnych wraz z~odchyleniem standardowym w~obrębie
-odpowiednich podzbiorów. Zaobserwowane wartości trafności są niższe niż
-w~przypadku pozostałych miar jakościowych i~mieszczą się w~przedziale
-0{,}332--0{,}364 dla wyników łącznych. Architektura deterministyczna i~ReAct
-osiągnęły tę samą najwyższą wartość (0{,}364), a~tablicowa najniższą (0{,}332).
-We wszystkich architekturach trafność przyjmuje wyższe wartości dla pytań
-bardzo prostych i~maleje wraz ze wzrostem poziomu trudności. W~rozbiciu według
-ubezpieczyciela najwyższe wartości we wszystkich architekturach odnotowano
-w~grupie \texttt{Hestia}, a~najniższe -- w~grupie \texttt{Warta}.
+  Trafność dokumentów oceniano na poziomie pojedynczego cytowania -- łącznie
+  1\,786~par pytanie--fragment.
+  Tabele~\ref{tab:trafnosc-trudnosc}--\ref{tab:trafnosc-ubezpieczyciel} podają
+  średnie arytmetyczne ocen binarnych wraz z~odchyleniem standardowym w~obrębie
+  odpowiednich podzbiorów. Zaobserwowane wartości trafności są niższe niż
+  w~przypadku pozostałych miar jakościowych i~mieszczą się w~przedziale
+  0{,}332--0{,}364 dla wyników łącznych. Architektura deterministyczna i~ReAct
+  osiągnęły tę samą najwyższą wartość (0{,}364), a~tablicowa najniższą (0{,}332).
+  We wszystkich architekturach trafność przyjmuje wyższe wartości dla pytań
+  bardzo prostych i~maleje wraz ze wzrostem poziomu trudności. W~rozbiciu według
+  ubezpieczyciela najwyższe wartości we wszystkich architekturach odnotowano
+  w~grupie \texttt{Hestia}, a~najniższe -- w~grupie \texttt{Warta}.
 
-\begin{table}[H]
-  \caption{Trafność dokumentów według poziomu trudności}\label{tab:trafnosc-trudnosc}
-  \centering
-  \footnotesize
-  \renewcommand{\arraystretch}{1.3}
-  \begin{tabular}{@{} l c c c c c @{}}
-    \toprule
-    \textbf{Architektura}
-    & \textbf{B.~proste}
-    & \textbf{Proste}
-    & \textbf{Złożone}
-    & \textbf{B.~złożone}
-    & \textbf{Łącznie}                                                                                                                                                                  \\
-    \midrule
-    Deterministyczna    & \textbf{0{,}545 (\(\pm\) 0{,}087)} & \textbf{0{,}394 (\(\pm\) 0{,}048)} & 0{,}330 (\(\pm\) 0{,}046)          & 0{,}305 (\(\pm\) 0{,}047)          & \textbf{0{,}364 (\(\pm\) 0{,}026)} \\
-    Planer--wykonawca   & 0{,}500 (\(\pm\) 0{,}091)          & 0{,}323 (\(\pm\) 0{,}048)          & 0{,}359 (\(\pm\) 0{,}050)          & 0{,}315 (\(\pm\) 0{,}049)          & 0{,}349 (\(\pm\) 0{,}027)          \\
-    Router--specjalista & 0{,}441 (\(\pm\) 0{,}085)          & 0{,}392 (\(\pm\) 0{,}050)          & 0{,}283 (\(\pm\) 0{,}045)          & \textbf{0{,}370 (\(\pm\) 0{,}048)} & 0{,}358 (\(\pm\) 0{,}026)          \\
-    Tablicowa           & 0{,}500 (\(\pm\) 0{,}086)          & 0{,}307 (\(\pm\) 0{,}046)          & 0{,}337 (\(\pm\) 0{,}048)          & 0{,}298 (\(\pm\) 0{,}045)          & 0{,}332 (\(\pm\) 0{,}026)          \\
-    Hierarchiczna       & 0{,}515 (\(\pm\) 0{,}087)          & 0{,}330 (\(\pm\) 0{,}046)          & 0{,}333 (\(\pm\) 0{,}047)          & 0{,}314 (\(\pm\) 0{,}046)          & 0{,}344 (\(\pm\) 0{,}026)          \\
-    ReAct               & 0{,}500 (\(\pm\) 0{,}134)          & 0{,}370 (\(\pm\) 0{,}066)          & \textbf{0{,}419 (\(\pm\) 0{,}075)} & 0{,}219 (\(\pm\) 0{,}073)          & 0{,}364 (\(\pm\) 0{,}040)          \\
-    \bottomrule
-  \end{tabular}
-  \zrodlo{opracowanie własne}
-\end{table}
+  \begin{table}[H]
+    \caption{Trafność dokumentów według poziomu trudności}\label{tab:trafnosc-trudnosc}
+    \centering
+    \footnotesize
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabular}{@{} l c c c c c @{}}
+      \toprule
+      \textbf{Architektura}
+      & \textbf{B.~proste}
+      & \textbf{Proste}
+      & \textbf{Złożone}
+      & \textbf{B.~złożone}
+      & \textbf{Łącznie}                                                                                                                                                                  \\
+      \midrule
+      Deterministyczna    & \textbf{0{,}545 (\(\pm\) 0{,}087)} & \textbf{0{,}394 (\(\pm\) 0{,}048)} & 0{,}330 (\(\pm\) 0{,}046)          & 0{,}305 (\(\pm\) 0{,}047)          & \textbf{0{,}364 (\(\pm\) 0{,}026)} \\
+      Planer--wykonawca   & 0{,}500 (\(\pm\) 0{,}091)          & 0{,}323 (\(\pm\) 0{,}048)          & 0{,}359 (\(\pm\) 0{,}050)          & 0{,}315 (\(\pm\) 0{,}049)          & 0{,}349 (\(\pm\) 0{,}027)          \\
+      Router--specjalista & 0{,}441 (\(\pm\) 0{,}085)          & 0{,}392 (\(\pm\) 0{,}050)          & 0{,}283 (\(\pm\) 0{,}045)          & \textbf{0{,}370 (\(\pm\) 0{,}048)} & 0{,}358 (\(\pm\) 0{,}026)          \\
+      Tablicowa           & 0{,}500 (\(\pm\) 0{,}086)          & 0{,}307 (\(\pm\) 0{,}046)          & 0{,}337 (\(\pm\) 0{,}048)          & 0{,}298 (\(\pm\) 0{,}045)          & 0{,}332 (\(\pm\) 0{,}026)          \\
+      Hierarchiczna       & 0{,}515 (\(\pm\) 0{,}087)          & 0{,}330 (\(\pm\) 0{,}046)          & 0{,}333 (\(\pm\) 0{,}047)          & 0{,}314 (\(\pm\) 0{,}046)          & 0{,}344 (\(\pm\) 0{,}026)          \\
+      ReAct               & 0{,}500 (\(\pm\) 0{,}134)          & 0{,}370 (\(\pm\) 0{,}066)          & \textbf{0{,}419 (\(\pm\) 0{,}075)} & 0{,}219 (\(\pm\) 0{,}073)          & 0{,}364 (\(\pm\) 0{,}040)          \\
+      \bottomrule
+    \end{tabular}
+    \zrodlo{opracowanie własne}
+  \end{table}
 
-\begin{table}[H]
-  \caption{Trafność dokumentów według kategorii produktowej}\label{tab:trafnosc-kategoria}
-  \centering
-  \small
-  \renewcommand{\arraystretch}{1.3}
-  \begin{tabular}{@{} l c c c c @{}}
-    \toprule
-    \textbf{Architektura}
-    & \textbf{Auto}
-    & \textbf{Mieszkanie}
-    & \textbf{Podróż}
-    & \textbf{Łącznie}                                                                                                                              \\
-    \midrule
-    Deterministyczna    & 0{,}315 (\(\pm\) 0{,}044)          & \textbf{0{,}386 (\(\pm\) 0{,}046)} & 0{,}391 (\(\pm\) 0{,}047)          & \textbf{0{,}364 (\(\pm\) 0{,}026)} \\
-    Planer--wykonawca   & 0{,}323 (\(\pm\) 0{,}048)          & 0{,}383 (\(\pm\) 0{,}047)          & 0{,}337 (\(\pm\) 0{,}047)          & 0{,}349 (\(\pm\) 0{,}027)          \\
-    Router--specjalista & \textbf{0{,}352 (\(\pm\) 0{,}046)} & 0{,}372 (\(\pm\) 0{,}045)          & 0{,}349 (\(\pm\) 0{,}046)          & 0{,}358 (\(\pm\) 0{,}026)          \\
-    Tablicowa           & 0{,}315 (\(\pm\) 0{,}044)          & 0{,}342 (\(\pm\) 0{,}044)          & 0{,}339 (\(\pm\) 0{,}045)          & 0{,}332 (\(\pm\) 0{,}026)          \\
-    Hierarchiczna       & 0{,}309 (\(\pm\) 0{,}044)          & 0{,}331 (\(\pm\) 0{,}043)          & \textbf{0{,}394 (\(\pm\) 0{,}047)} & 0{,}344 (\(\pm\) 0{,}026)          \\
-    ReAct               & 0{,}318 (\(\pm\) 0{,}070)          & 0{,}372 (\(\pm\) 0{,}074)          & 0{,}393 (\(\pm\) 0{,}065)          & 0{,}364 (\(\pm\) 0{,}040)          \\
-    \bottomrule
-  \end{tabular}
-  \zrodlo{opracowanie własne}
-\end{table}
+  \begin{table}[H]
+    \caption{Trafność dokumentów według kategorii produktowej}\label{tab:trafnosc-kategoria}
+    \centering
+    \small
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabular}{@{} l c c c c @{}}
+      \toprule
+      \textbf{Architektura}
+      & \textbf{Auto}
+      & \textbf{Mieszkanie}
+      & \textbf{Podróż}
+      & \textbf{Łącznie}                                                                                                                              \\
+      \midrule
+      Deterministyczna    & 0{,}315 (\(\pm\) 0{,}044)          & \textbf{0{,}386 (\(\pm\) 0{,}046)} & 0{,}391 (\(\pm\) 0{,}047)          & \textbf{0{,}364 (\(\pm\) 0{,}026)} \\
+      Planer--wykonawca   & 0{,}323 (\(\pm\) 0{,}048)          & 0{,}383 (\(\pm\) 0{,}047)          & 0{,}337 (\(\pm\) 0{,}047)          & 0{,}349 (\(\pm\) 0{,}027)          \\
+      Router--specjalista & \textbf{0{,}352 (\(\pm\) 0{,}046)} & 0{,}372 (\(\pm\) 0{,}045)          & 0{,}349 (\(\pm\) 0{,}046)          & 0{,}358 (\(\pm\) 0{,}026)          \\
+      Tablicowa           & 0{,}315 (\(\pm\) 0{,}044)          & 0{,}342 (\(\pm\) 0{,}044)          & 0{,}339 (\(\pm\) 0{,}045)          & 0{,}332 (\(\pm\) 0{,}026)          \\
+      Hierarchiczna       & 0{,}309 (\(\pm\) 0{,}044)          & 0{,}331 (\(\pm\) 0{,}043)          & \textbf{0{,}394 (\(\pm\) 0{,}047)} & 0{,}344 (\(\pm\) 0{,}026)          \\
+      ReAct               & 0{,}318 (\(\pm\) 0{,}070)          & 0{,}372 (\(\pm\) 0{,}074)          & 0{,}393 (\(\pm\) 0{,}065)          & 0{,}364 (\(\pm\) 0{,}040)          \\
+      \bottomrule
+    \end{tabular}
+    \zrodlo{opracowanie własne}
+  \end{table}
 
-\begin{table}[H]
-  \caption{Trafność dokumentów według ubezpieczyciela}\label{tab:trafnosc-ubezpieczyciel}
-  \centering
-  \small
-  \renewcommand{\arraystretch}{1.3}
-  \begin{tabular}{@{} l c c c c @{}}
-    \toprule
-    \textbf{Architektura}
-    & \textbf{Hestia}
-    & \textbf{PZU}
-    & \textbf{Warta}
-    & \textbf{Łącznie}                                                                                                                              \\
-    \midrule
-    Deterministyczna    & 0{,}460 (\(\pm\) 0{,}047)          & 0{,}336 (\(\pm\) 0{,}044)          & 0{,}294 (\(\pm\) 0{,}044)          & \textbf{0{,}364 (\(\pm\) 0{,}026)} \\
-    Planer--wykonawca   & 0{,}406 (\(\pm\) 0{,}048)          & 0{,}333 (\(\pm\) 0{,}048)          & 0{,}304 (\(\pm\) 0{,}046)          & 0{,}349 (\(\pm\) 0{,}027)          \\
-    Router--specjalista & 0{,}436 (\(\pm\) 0{,}047)          & 0{,}324 (\(\pm\) 0{,}046)          & \textbf{0{,}313 (\(\pm\) 0{,}043)} & 0{,}358 (\(\pm\) 0{,}026)          \\
-    Tablicowa           & 0{,}425 (\(\pm\) 0{,}047)          & 0{,}270 (\(\pm\) 0{,}042)          & 0{,}301 (\(\pm\) 0{,}043)          & 0{,}332 (\(\pm\) 0{,}026)          \\
-    Hierarchiczna       & 0{,}416 (\(\pm\) 0{,}046)          & \textbf{0{,}342 (\(\pm\) 0{,}045)} & 0{,}274 (\(\pm\) 0{,}042)          & 0{,}344 (\(\pm\) 0{,}026)          \\
-    ReAct               & \textbf{0{,}480 (\(\pm\) 0{,}071)} & 0{,}302 (\(\pm\) 0{,}063)          & 0{,}300 (\(\pm\) 0{,}072)          & 0{,}364 (\(\pm\) 0{,}040)          \\
-    \bottomrule
-  \end{tabular}
-  \zrodlo{opracowanie własne}
-\end{table}
+  \begin{table}[H]
+    \caption{Trafność dokumentów według ubezpieczyciela}\label{tab:trafnosc-ubezpieczyciel}
+    \centering
+    \small
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabular}{@{} l c c c c @{}}
+      \toprule
+      \textbf{Architektura}
+      & \textbf{Hestia}
+      & \textbf{PZU}
+      & \textbf{Warta}
+      & \textbf{Łącznie}                                                                                                                              \\
+      \midrule
+      Deterministyczna    & 0{,}460 (\(\pm\) 0{,}047)          & 0{,}336 (\(\pm\) 0{,}044)          & 0{,}294 (\(\pm\) 0{,}044)          & \textbf{0{,}364 (\(\pm\) 0{,}026)} \\
+      Planer--wykonawca   & 0{,}406 (\(\pm\) 0{,}048)          & 0{,}333 (\(\pm\) 0{,}048)          & 0{,}304 (\(\pm\) 0{,}046)          & 0{,}349 (\(\pm\) 0{,}027)          \\
+      Router--specjalista & 0{,}436 (\(\pm\) 0{,}047)          & 0{,}324 (\(\pm\) 0{,}046)          & \textbf{0{,}313 (\(\pm\) 0{,}043)} & 0{,}358 (\(\pm\) 0{,}026)          \\
+      Tablicowa           & 0{,}425 (\(\pm\) 0{,}047)          & 0{,}270 (\(\pm\) 0{,}042)          & 0{,}301 (\(\pm\) 0{,}043)          & 0{,}332 (\(\pm\) 0{,}026)          \\
+      Hierarchiczna       & 0{,}416 (\(\pm\) 0{,}046)          & \textbf{0{,}342 (\(\pm\) 0{,}045)} & 0{,}274 (\(\pm\) 0{,}042)          & 0{,}344 (\(\pm\) 0{,}026)          \\
+      ReAct               & \textbf{0{,}480 (\(\pm\) 0{,}071)} & 0{,}302 (\(\pm\) 0{,}063)          & 0{,}300 (\(\pm\) 0{,}072)          & 0{,}364 (\(\pm\) 0{,}040)          \\
+      \bottomrule
+    \end{tabular}
+    \zrodlo{opracowanie własne}
+  \end{table}
 
-\section{Parametry konfiguracyjne eksperymentu}\label{sec:parametry-konfiguracyjne}
+  \section{Parametry konfiguracyjne eksperymentu}\label{sec:parametry-konfiguracyjne}
 
-Sekcja dokumentuje wartości parametrów sterujących przebiegiem uruchomienia.
-Pełną konfigurację zawierają moduły \texttt{sources/config/app.py}
-i~\texttt{sources/config/graph.py}; poniższe zestawienie obejmuje wyłącznie
-ustawienia użyte w~uruchomieniu \texttt{20260313\_200511}.
+  Sekcja dokumentuje wartości parametrów sterujących przebiegiem uruchomienia.
+  Pełną konfigurację zawierają moduły \texttt{sources/config/app.py}
+  i~\texttt{sources/config/graph.py}; poniższe zestawienie obejmuje wyłącznie
+  ustawienia użyte w~uruchomieniu \texttt{20260313\_200511}.
 
-\subsection{Parametry modeli językowych}\label{subsec:parametry-modeli}
+  \subsection{Parametry modeli językowych}\label{subsec:parametry-modeli}
 
-Wszystkie role pomocnicze -- parser, router, planer, kontroler ReAct, rewriter,
-dekompozytor i~ewaluator -- zrealizowano z~wykorzystaniem modelu
-\texttt{gpt-5}. Ten sam model zastosowano do syntezy odpowiedzi końcowej. Każdą
-rolę skonfigurowano z~temperaturą równą zero, limitem 120~s na pojedyncze
-wywołanie i~mechanizmem ponowień z~wykładniczym opóźnieniem od 1 do 60~s.
-Tabela~\ref{tab:parametry-modeli} zestawia pełną konfigurację.
+  Wszystkie role pomocnicze -- parser, router, planer, kontroler ReAct, rewriter,
+  dekompozytor i~ewaluator -- zrealizowano z~wykorzystaniem modelu
+  \texttt{gpt-5}. Ten sam model zastosowano do syntezy odpowiedzi końcowej. Każdą
+  rolę skonfigurowano z~temperaturą równą zero, limitem 120~s na pojedyncze
+  wywołanie i~mechanizmem ponowień z~wykładniczym opóźnieniem od 1 do 60~s.
+  Tabela~\ref{tab:parametry-modeli} zestawia pełną konfigurację.
 
-\begin{table}[H]
-  \caption{Parametry modeli językowych}\label{tab:parametry-modeli}
-  \centering
-  \small
-  \renewcommand{\arraystretch}{1.3}
-  \begin{tabular}{@{} l l l @{}}
-    \toprule
-    \textbf{Parametr}
-    & \textbf{Wartość}
-    & \textbf{Rola}                                               \\
-    \midrule
-    \texttt{model\_name}
-    & \texttt{gpt-5}   & model syntezy odpowiedzi                 \\
-    \texttt{parser\_model\_name}
-    & \texttt{gpt-5}   & parser pytań                             \\
-    \texttt{router\_model\_name}
-    & \texttt{gpt-5}   & router specjalisty                       \\
-    \texttt{planner\_model\_name}
-    & \texttt{gpt-5}   & planer kroków                            \\
-    \texttt{controller\_model\_name}
-    & \texttt{gpt-5}   & kontroler ReAct                          \\
-    \texttt{rewrite\_model\_name}
-    & \texttt{gpt-5}   & przepisywanie zapytań                    \\
-    \texttt{decomposer\_model\_name}
-    & \texttt{gpt-5}   & dekompozycja pytań                       \\
-    \texttt{evaluation\_model\_name}
-    & \texttt{gpt-5}   & sędzia jakości                           \\
-    \texttt{temperature}
-    & 0{,}0             & determinizm wyjścia                      \\
-    \texttt{retry\_max\_attempts}
-    & 5                & liczba ponowień                          \\
-    \texttt{retry\_min\_wait}
-    & 1{,}0~s          & minimalna pauza między ponowieniami      \\
-    \texttt{retry\_max\_wait}
-    & 60{,}0~s         & maksymalna pauza między ponowieniami     \\
-    \texttt{llm\_request\_timeout}
-    & 120{,}0~s        & limit pojedynczego wywołania             \\
-    \texttt{max\_concurrent\_api\_calls}
-    & 16               & limit równoległości wywołań \texttt{API} \\
-    \bottomrule
-  \end{tabular}
-  \zrodlo{opracowanie własne na podstawie kodu źródłowego}
-\end{table}
+  \begin{table}[H]
+    \caption{Parametry modeli językowych}\label{tab:parametry-modeli}
+    \centering
+    \small
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabular}{@{} l l l @{}}
+      \toprule
+      \textbf{Parametr}
+      & \textbf{Wartość}
+      & \textbf{Rola}                                               \\
+      \midrule
+      \texttt{model\_name}
+      & \texttt{gpt-5}   & model syntezy odpowiedzi                 \\
+      \texttt{parser\_model\_name}
+      & \texttt{gpt-5}   & parser pytań                             \\
+      \texttt{router\_model\_name}
+      & \texttt{gpt-5}   & router specjalisty                       \\
+      \texttt{planner\_model\_name}
+      & \texttt{gpt-5}   & planer kroków                            \\
+      \texttt{controller\_model\_name}
+      & \texttt{gpt-5}   & kontroler ReAct                          \\
+      \texttt{rewrite\_model\_name}
+      & \texttt{gpt-5}   & przepisywanie zapytań                    \\
+      \texttt{decomposer\_model\_name}
+      & \texttt{gpt-5}   & dekompozycja pytań                       \\
+      \texttt{evaluation\_model\_name}
+      & \texttt{gpt-5}   & sędzia jakości                           \\
+      \texttt{temperature}
+      & 0{,}0             & determinizm wyjścia                      \\
+      \texttt{retry\_max\_attempts}
+      & 5                & liczba ponowień                          \\
+      \texttt{retry\_min\_wait}
+      & 1{,}0~s          & minimalna pauza między ponowieniami      \\
+      \texttt{retry\_max\_wait}
+      & 60{,}0~s         & maksymalna pauza między ponowieniami     \\
+      \texttt{llm\_request\_timeout}
+      & 120{,}0~s        & limit pojedynczego wywołania             \\
+      \texttt{max\_concurrent\_api\_calls}
+      & 16               & limit równoległości wywołań \texttt{API} \\
+      \bottomrule
+    \end{tabular}
+    \zrodlo{opracowanie własne na podstawie kodu źródłowego}
+  \end{table}
 
-\subsection{Parametry wyszukiwania}\label{subsec:parametry-wyszukiwania}
+  \subsection{Parametry wyszukiwania}\label{subsec:parametry-wyszukiwania}
 
-Wyszukiwanie wektorowe wykonano na kolekcji \texttt{insurance\_documents}
-w~bazie \texttt{Qdrant}, z~wykorzystaniem modelu osadzeń
-\texttt{text-embedding-3-large} o~wymiarze 3072. Etap rerankingu wyłączono we
-wszystkich architekturach; węzeł rerankera pozostał jednak obecny w~każdym
-grafie. Tabela~\ref{tab:parametry-wyszukiwania} zestawia pełną konfigurację
-warstwy wyszukiwania wraz z~nominalnymi parametrami rerankera.
+  Wyszukiwanie wektorowe wykonano na kolekcji \texttt{insurance\_documents}
+  w~bazie \texttt{Qdrant}, z~wykorzystaniem modelu osadzeń
+  \texttt{text-embedding-3-large} o~wymiarze 3072. Etap rerankingu wyłączono we
+  wszystkich architekturach; węzeł rerankera pozostał jednak obecny w~każdym
+  grafie. Tabela~\ref{tab:parametry-wyszukiwania} prezentuje pełną konfigurację
+  warstwy wyszukiwania wraz z~nominalnymi parametrami rerankera.
 
-\begin{table}[H]
-  \caption{Parametry wyszukiwania}\label{tab:parametry-wyszukiwania}
-  \centering
-  \small
-  \renewcommand{\arraystretch}{1.3}
-  \begin{tabularx}{\textwidth}{@{} l l X @{}}
-    \toprule
-    \textbf{Parametr}
-    & \textbf{Wartość}
-    & \textbf{Opis}                                                              \\
-    \midrule
-    \texttt{embedding.model\_name}
-    & \texttt{text-embedding-3-large} & model osadzeń                            \\
-    \texttt{embedding.dimension}
-    & 3072                            & wymiar wektora                           \\
-    \texttt{qdrant.collection\_name}
-    & \texttt{insurance\_documents}   & nazwa kolekcji                           \\
-    \texttt{top\_k}
-    & 5                               & liczba pobieranych fragmentów            \\
-    \texttt{evidence\_top\_k}
-    & 4                               & liczba dowodów przekazywanych do syntezy \\
-    \texttt{reranking.enabled}
-    & \texttt{False}                  & reranking wyłączony w~eksperymencie      \\
-    \texttt{reranking.score\_threshold}
-    & 0{,}3                            & próg odrzucenia fragmentu                \\
-    \texttt{reranking.top\_k\_before}
-    & 20                              & wejście do rerankera                     \\
-    \texttt{reranking.top\_k\_after}
-    & 5                               & wyjście z~rerankera                      \\
-    \bottomrule
-  \end{tabularx}
-  \zrodlo{opracowanie własne na podstawie kodu źródłowego}
-\end{table}
+  \begin{table}[H]
+    \caption{Parametry wyszukiwania}\label{tab:parametry-wyszukiwania}
+    \centering
+    \small
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabularx}{\textwidth}{@{} l l X @{}}
+      \toprule
+      \textbf{Parametr}
+      & \textbf{Wartość}
+      & \textbf{Opis}                                                              \\
+      \midrule
+      \texttt{embedding.model\_name}
+      & \texttt{text-embedding-3-large} & model osadzeń                            \\
+      \texttt{embedding.dimension}
+      & 3072                            & wymiar wektora                           \\
+      \texttt{qdrant.collection\_name}
+      & \texttt{insurance\_documents}   & nazwa kolekcji                           \\
+      \texttt{top\_k}
+      & 5                               & liczba pobieranych fragmentów            \\
+      \texttt{evidence\_top\_k}
+      & 4                               & liczba dowodów przekazywanych do syntezy \\
+      \texttt{reranking.enabled}
+      & \texttt{False}                  & reranking wyłączony w~eksperymencie      \\
+      \texttt{reranking.score\_threshold}
+      & 0{,}3                            & próg odrzucenia fragmentu                \\
+      \texttt{reranking.top\_k\_before}
+      & 20                              & wejście do rerankera                     \\
+      \texttt{reranking.top\_k\_after}
+      & 5                               & wyjście z~rerankera                      \\
+      \bottomrule
+    \end{tabularx}
+    \zrodlo{opracowanie własne na podstawie kodu źródłowego}
+  \end{table}
 
-\subsection{Parametry fragmentacji}\label{subsec:parametry-fragmentacji}
+  \subsection{Parametry fragmentacji}\label{subsec:parametry-fragmentacji}
 
-Dokumenty OWU i~IPID przetwarzano przy użyciu odrębnych profili fragmentacji.
-W~obu przypadkach zastosowano podział po nagłówkach Markdown poziomów 1--3,
-a~następnie rekurencyjną fragmentację większych sekcji. Parametry wyrażone
-w~liczbie znaków zestawiono w~tabeli~\ref{tab:parametry-fragmentacji};
-zastosowanie krótszych fragmentów dla IPID wynikało z~większej gęstości
-informacyjnej tego formatu.
+  Dokumenty OWU i~IPID przetwarzano przy użyciu odrębnych profili fragmentacji.
+  W~obu przypadkach zastosowano podział po nagłówkach Markdown poziomów 1--3,
+  a~następnie rekurencyjną fragmentację większych sekcji. Parametry wyrażone
+  w~liczbie znaków zestawiono w~tabeli~\ref{tab:parametry-fragmentacji};
+  zastosowanie krótszych fragmentów dla IPID wynikało z~większej gęstości
+  informacyjnej tego formatu.
 
-\begin{table}[H]
-  \caption{Parametry fragmentacji dokumentów}\label{tab:parametry-fragmentacji}
-  \centering
-  \small
-  \renewcommand{\arraystretch}{1.3}
-  \begin{tabular}{@{} l c c l @{}}
-    \toprule
-    \textbf{Parametr}
-    & \textbf{OWU}
-    & \textbf{IPID}
-    & \textbf{Opis}                                          \\
-    \midrule
-    \texttt{chunk\_size}      & 512           & 384 & docelowy rozmiar fragmentu       \\
-    \texttt{chunk\_overlap}   & 64            & 48  & nakładanie sąsiednich fragmentów \\
-    \texttt{min\_chunk\_size} & 64            & 48  & minimalny dopuszczalny rozmiar   \\
-    \bottomrule
-  \end{tabular}
-  \zrodlo{opracowanie własne na podstawie kodu źródłowego}
-\end{table}
+  \begin{table}[H]
+    \caption{Parametry fragmentacji dokumentów}\label{tab:parametry-fragmentacji}
+    \centering
+    \small
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabular}{@{} l c c l @{}}
+      \toprule
+      \textbf{Parametr}
+      & \textbf{OWU}
+      & \textbf{IPID}
+      & \textbf{Opis}                                          \\
+      \midrule
+      \texttt{chunk\_size}      & 512           & 384 & docelowy rozmiar fragmentu       \\
+      \texttt{chunk\_overlap}   & 64            & 48  & nakładanie sąsiednich fragmentów \\
+      \texttt{min\_chunk\_size} & 64            & 48  & minimalny dopuszczalny rozmiar   \\
+      \bottomrule
+    \end{tabular}
+    \zrodlo{opracowanie własne na podstawie kodu źródłowego}
+  \end{table}
 
-\subsection{Parametry architektur}\label{subsec:parametry-architektur}
+  \subsection{Parametry architektur}\label{subsec:parametry-architektur}
 
-Architektury iteracyjne wykorzystują jawne ograniczenia liczby kroków;
-architektura hierarchiczna ogranicza dekompozycję do trzech podpytań
-bezpośrednio w~kodzie węzła dekomponera. Architektury deterministyczna
-i~router--specjalista nie mają parametrów sterujących właściwych dla danej
-topologii. Tabela~\ref{tab:parametry-architektur} zestawia wartości dla
-wariantów, w~których takie parametry występują.
+  Architektury iteracyjne wykorzystują jawne ograniczenia liczby kroków;
+  architektura hierarchiczna ogranicza dekompozycję do trzech podpytań
+  bezpośrednio w~kodzie węzła dekomponera. Architektury deterministyczna
+  i~router--specjalista nie mają parametrów sterujących właściwych dla danej
+  topologii. Tabela~\ref{tab:parametry-architektur} zestawia wartości dla
+  wariantów, w~których takie parametry występują.
 
-\begin{table}[H]
-  \caption{Parametry sterujące architektur}\label{tab:parametry-architektur}
-  \centering
-  \small
-  \renewcommand{\arraystretch}{1.3}
-  \begin{tabular}{@{} l l c l @{}}
-    \toprule
-    \textbf{Architektura}
-    & \textbf{Parametr}
-    & \textbf{Wartość}
-    & \textbf{Znaczenie}                            \\
-    \midrule
-    ReAct
-    & \texttt{max\_react\_iterations}          & 15
-    & limit iteracji pętli obserwacyjnej            \\
-    Tablicowa
-    & \texttt{max\_blackboard\_iterations}     & 15
-    & limit cykli dyspozytora                       \\
-    Hierarchiczna
-    & max. liczba podpytań                     & 3
-    & przycięcie listy \texttt{sub\_questions}      \\
-    \bottomrule
-  \end{tabular}
-  \zrodlo{opracowanie własne na podstawie kodu źródłowego}
-\end{table}
+  \begin{table}[H]
+    \caption{Parametry sterujące architektur}\label{tab:parametry-architektur}
+    \centering
+    \small
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabular}{@{} l l c l @{}}
+      \toprule
+      \textbf{Architektura}
+      & \textbf{Parametr}
+      & \textbf{Wartość}
+      & \textbf{Znaczenie}                            \\
+      \midrule
+      ReAct
+      & \texttt{max\_react\_iterations}          & 15
+      & limit iteracji pętli obserwacyjnej            \\
+      Tablicowa
+      & \texttt{max\_blackboard\_iterations}     & 15
+      & limit cykli dyspozytora                       \\
+      Hierarchiczna
+      & max. liczba podpytań                     & 3
+      & przycięcie listy \texttt{sub\_questions}      \\
+      \bottomrule
+    \end{tabular}
+    \zrodlo{opracowanie własne na podstawie kodu źródłowego}
+  \end{table}
 
-\subsection{Parametry wykonania}\label{subsec:parametry-wykonania}
+  \subsection{Parametry wykonania}\label{subsec:parametry-wykonania}
 
-Komponent wykonawczy pobierał parametry współbieżności
-z~\texttt{ConcurrencyConfig} i~inicjował pulę 32~wątków obsługujących pełną
-macierz par pytanie--architektura. Tabela~\ref{tab:parametry-wykonania}
-zestawia liczebności i~ustawienia dla uruchomienia \texttt{20260313\_200511}.
+  Komponent wykonawczy pobierał parametry współbieżności
+  z~\texttt{ConcurrencyConfig} i~inicjował pulę 32~wątków obsługujących pełną
+  macierz par pytanie--architektura. Tabela~\ref{tab:parametry-wykonania}
+  przedstawia liczebności i~ustawienia dla uruchomienia \texttt{20260313\_200511}.
 
-\begin{table}[H]
-  \caption{Parametry wykonania eksperymentu}\label{tab:parametry-wykonania}
-  \centering
-  \small
-  \renewcommand{\arraystretch}{1.3}
-  \begin{tabular}{@{} l c l @{}}
-    \toprule
-    \textbf{Parametr}
-    & \textbf{Wartość}
-    & \textbf{Opis}                                            \\
-    \midrule
-    \texttt{max\_workers}    & 32               & rozmiar puli wątków roboczych         \\
-    Liczba pytań testowych   & 90               & zestaw \texttt{pytania\_20251130.csv} \\
-    Liczba architektur       & 6                & komplet \texttt{ALL\_PATTERNS}        \\
-    Łączna liczba uruchomień & 540              & macierz \(90 \times 6\)               \\
-    \bottomrule
-  \end{tabular}
-  \zrodlo{opracowanie własne na podstawie kodu źródłowego}
-\end{table}
+  \begin{table}[H]
+    \caption{Parametry wykonania eksperymentu}\label{tab:parametry-wykonania}
+    \centering
+    \small
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabular}{@{} l c l @{}}
+      \toprule
+      \textbf{Parametr}
+      & \textbf{Wartość}
+      & \textbf{Opis}                                            \\
+      \midrule
+      \texttt{max\_workers}    & 32               & rozmiar puli wątków roboczych         \\
+      Liczba pytań testowych   & 90               & zestaw \texttt{pytania\_20251130.csv} \\
+      Liczba architektur       & 6                & komplet \texttt{ALL\_PATTERNS}        \\
+      Łączna liczba uruchomień & 540              & macierz \(90 \times 6\)               \\
+      \bottomrule
+    \end{tabular}
+    \zrodlo{opracowanie własne na podstawie kodu źródłowego}
+  \end{table}

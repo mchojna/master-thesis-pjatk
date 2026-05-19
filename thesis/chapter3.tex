@@ -20,7 +20,7 @@ zestawów narzędzi uniemożliwiłoby przypisanie różnic w~wynikach wyłączni
 testowanej architekturze. Układ kontrolowany eliminuje wpływ czynników
 pobocznych.
 
-Alternatywne metody badawcze zestawiono
+Alternatywne metody badawcze przedstawiono
 w~tabeli~\ref{tab:porownanie-metod-badawczych}. Studium przypadku pojedynczej
 architektury uniemożliwia ocenę porównawczą. Analiza teoretyczna pomija wpływ
 specyfiki korpusu i~parametrów sterowania na zachowanie modeli językowych.
@@ -80,7 +80,7 @@ implementację w~jednolitym środowisku bez wprowadzania dodatkowych,
 specyficznych narzędzi. Umożliwiło to analizę wpływu orkiestracji na jakość
 odpowiedzi.
 
-Tabela~\ref{tab:prownanie-architektur-agentowych} zestawia oba typy architektur
+Tabela~\ref{tab:prownanie-architektur-agentowych} porównuje oba typy architektur
 w~kluczowych wymiarach projektowych, stanowiąc punkt odniesienia dla
 interpretacji wyników eksperymentu w~\cref{chap:eksperyment-i-wyniki}.
 
@@ -176,6 +176,9 @@ odpowiedzi modelu i~wariancję między przebiegami, co pozwala przypisać
 zaobserwowane różnice bezpośrednio badanym mechanizmom sterowania, a~nie
 zmienności LLM.
 
+Zestawienie warunków kontrolowanych przedstawia
+tabela~\ref{tab:zestawienie-warunkow-kontrolowanych}.
+
 \begin{table}[H]
   \caption{Zestawienie warunków kontrolowanych}\label{tab:zestawienie-warunkow-kontrolowanych}
   \centering
@@ -229,7 +232,7 @@ odpowiedzi. Z~uwagi na brak publicznego benchmarku dla polskojęzycznych
 dokumentów ubezpieczeniowych, oba komponenty opracowano autorsko.
 
 Korpus obejmował 22~dokumenty ubezpieczeniowe pochodzące od trzech głównych
-towarzystw ubezpieczeniowych: ERGO Hestia S.A., Powszechnego Zakładu
+towarzystw ubezpieczeniowych: STU ERGO Hestia S.A., Powszechnego Zakładu
 Ubezpieczeń S.A. oraz TUiR Warta S.A. Dla każdego ubezpieczyciela uwzględniono
 trzy kategorie produktowe: ubezpieczenia komunikacyjne, mieszkaniowe
 i~podróżne. W~korpusie znalazły się dwa typy dokumentów: OWU oraz IPID.
@@ -282,7 +285,8 @@ dokumentu w~celu zbudowania pełnej odpowiedzi.
 Zestaw zbalansowano według ubezpieczycieli (po 30~pytań). Trzy główne poziomy
 trudności zawierają po 27~pytań, a~poziom bardzo prosty – 9~pytań. Taka
 dystrybucja eliminuje ryzyko obciążenia wyników specyfiką pojedynczego dostawcy
-lub typu produktu.
+lub typu produktu. Szczegółowy rozkład pytań przedstawia
+tabela~\ref{tab:zestawienie-rozkladu-pytan}.
 
 \begin{table}[H]
   \caption{Zestawienie rozkładu pytań}\label{tab:zestawienie-rozkladu-pytan}

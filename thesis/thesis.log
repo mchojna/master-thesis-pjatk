@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.4.17)  18 MAY 2026 20:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.4.17)  19 MAY 2026 22:11
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1789,7 +1789,7 @@ Overfull \hbox (42.33885pt too wide) in paragraph at lines 235--237
 
 (../code/sources/config/prompts.py) (../code/sources/config/prompts.py [115]) (../code/sources/config/prompts.py) (../code/sources/config/prompts.py) (../code/sources/config/prompts.py [116]) [117]
 Dodatek B.
-<../code/data/diagrams/deterministic.pdf, id=2556, 272.93968pt x 1058.99632pt>
+<../code/data/diagrams/deterministic.pdf, id=2558, 272.93968pt x 1058.99632pt>
 File: ../code/data/diagrams/deterministic.pdf Graphic file (type pdf)
 <use ../code/data/diagrams/deterministic.pdf>
 Package pdftex.def Info: ../code/data/diagrams/deterministic.pdf  used on input line 306.
@@ -1797,31 +1797,31 @@ Package pdftex.def Info: ../code/data/diagrams/deterministic.pdf  used on input 
 [118
 
 ]
-<../code/data/diagrams/planner_executor.pdf, id=2562, 477.70468pt x 650.43pt>
+<../code/data/diagrams/planner_executor.pdf, id=2564, 477.70468pt x 650.43pt>
 File: ../code/data/diagrams/planner_executor.pdf Graphic file (type pdf)
 <use ../code/data/diagrams/planner_executor.pdf>
 Package pdftex.def Info: ../code/data/diagrams/planner_executor.pdf  used on input line 316.
 (pdftex.def)             Requested size: 477.7035pt x 650.4284pt.
  [119 <../code/data/diagrams/deterministic.pdf>]
-<../code/data/diagrams/router_specialist.pdf, id=2587, 770.88pt x 1096.095pt>
+<../code/data/diagrams/router_specialist.pdf, id=2589, 770.88pt x 1096.095pt>
 File: ../code/data/diagrams/router_specialist.pdf Graphic file (type pdf)
 <use ../code/data/diagrams/router_specialist.pdf>
 Package pdftex.def Info: ../code/data/diagrams/router_specialist.pdf  used on input line 326.
 (pdftex.def)             Requested size: 770.87813pt x 1096.09233pt.
  [120 <../code/data/diagrams/planner_executor.pdf>]
-<../code/data/diagrams/blackboard.pdf, id=2616, 1204.5pt x 322.32419pt>
+<../code/data/diagrams/blackboard.pdf, id=2618, 1204.5pt x 322.32419pt>
 File: ../code/data/diagrams/blackboard.pdf Graphic file (type pdf)
 <use ../code/data/diagrams/blackboard.pdf>
 Package pdftex.def Info: ../code/data/diagrams/blackboard.pdf  used on input line 336.
 (pdftex.def)             Requested size: 1204.49707pt x 322.3234pt.
  [121 <../code/data/diagrams/router_specialist.pdf>]
-<../code/data/diagrams/hierarchical.pdf, id=2641, 518.89856pt x 838.09106pt>
+<../code/data/diagrams/hierarchical.pdf, id=2643, 518.89856pt x 838.09106pt>
 File: ../code/data/diagrams/hierarchical.pdf Graphic file (type pdf)
 <use ../code/data/diagrams/hierarchical.pdf>
 Package pdftex.def Info: ../code/data/diagrams/hierarchical.pdf  used on input line 346.
 (pdftex.def)             Requested size: 518.89728pt x 838.08902pt.
  [122 <../code/data/diagrams/blackboard.pdf>]
-<../code/data/diagrams/react.pdf, id=2667, 451.6875pt x 545.1567pt>
+<../code/data/diagrams/react.pdf, id=2669, 451.6875pt x 545.1567pt>
 File: ../code/data/diagrams/react.pdf Graphic file (type pdf)
 <use ../code/data/diagrams/react.pdf>
 Package pdftex.def Info: ../code/data/diagrams/react.pdf  used on input line 356.
@@ -1845,18 +1845,18 @@ Package logreq Info: Writing requests to 'thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 49729 strings out of 467349
- 1011659 string characters out of 5415635
+ 49727 strings out of 467349
+ 1011632 string characters out of 5415635
  2224754 words of memory out of 5000000
- 76349 multiletter control sequences out of 15000+600000
+ 76347 multiletter control sequences out of 15000+600000
  751342 words of font info for 544 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,14n,108p,1247b,2999s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfit1000.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sftt0800.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on thesis.pdf (133 pages, 1178592 bytes).
+Output written on thesis.pdf (133 pages, 1178697 bytes).
 PDF statistics:
- 3011 PDF objects out of 3580 (max. 8388607)
- 2690 compressed objects within 27 object streams
+ 3013 PDF objects out of 3580 (max. 8388607)
+ 2692 compressed objects within 27 object streams
  1061 named destinations out of 1200 (max. 500000)
  130768 words of extra memory for PDF output out of 154059 (max. 10000000)
 
