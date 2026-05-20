@@ -107,7 +107,8 @@ stosowane podziały dotyczą liczby agentów uczestniczących w~realizacji zadan
 oraz stopnia autonomii systemu podczas podejmowania
 decyzji~\cite{wang2024survey, xi2025rise, guo2024large}. Kryteria te są
 ortogonalne -- system jednoagentowy może być w~pełni autonomiczny, a~system
-wieloagentowy może działać według ściśle deterministycznego schematu.
+wieloagentowy może działać według ściśle deterministycznego 
+schematu~\cite{weng2023agent}.
 
 Najprostszym wariantem jest architektura jednoagentowa, w~której pojedynczy
 model językowy samodzielnie obsługuje cały cykl: interpretuje zapytanie,
@@ -130,7 +131,7 @@ diagnostyką błędów, ponieważ awaria dowolnego węzła utrudnia lokalizację
 przyczyny niepowodzenia~\cite{guo2024large, xi2025rise}.
 
 Niezależnie od liczby agentów, architektury różnią się również stopniem
-autonomii w~podejmowaniu decyzji~\cite{wang2024survey, xi2025rise}. Wyróżnia
+autonomii w~podejmowaniu decyzji~\cite{weng2023agentm wang2024survey, xi2025rise}. Wyróżnia
 się układy deterministyczne, realizujące z~góry zdefiniowaną sekwencję kroków,
 oraz układy w~pełni autonomiczne, w~których agent samodzielnie planuje
 i~modyfikuje działania na podstawie uzyskanych wyników. Przykładem pierwszego
@@ -543,7 +544,7 @@ założeniach dotyczących stanu zadania.
 Weryfikacja jakości działania systemów agentowych jest trudniejsza niż
 klasyczna ocena modeli przetwarzania języka naturalnego. Narzędzia takie jak
 BLEU, ROUGE czy BERTScore oceniają wyłącznie podobieństwo leksykalne do
-wzorca~\cite{papineni2002bleu, lin2004rouge, zhang2019bertscore} i~okazują się
+wzorca~\cite{papineni2002bleu, lin2004rouge} i~okazują się
 nieskuteczne przy sprawdzaniu poprawności merytorycznej w~systemach opartych na
 wieloetapowym rozumowaniu. Model może wygenerować tekst płynny i~poprawny
 gramatycznie, formułując jednocześnie twierdzenia sprzeczne z~faktami --
@@ -1380,9 +1381,9 @@ na jednym zapytaniu, lecz formułuje kolejne na podstawie wcześniejszych
 wyników. Podejście to jest szczególnie użyteczne w~pytaniach wieloskokowych
 (ang.~\textit{multi-hop}), gdzie informacja $X$ jest potrzebna po to, aby
 w~ogóle sformułować pytanie o~informację $Y$. Trivedi i~in. zaproponowali
-IRCoT, które przeplata kroki rozumowania z~kolejnymi wyszukiwaniami -- każdy
-krok wnioskowania może uruchomić nowe zapytanie do bazy
-wektorowej~\cite{trivedi2023interleaving}.
+IRCoT (Interleaving Retrieval with Chain-of-Thought), które przeplata kroki 
+rozumowania z~kolejnymi wyszukiwaniami -- każdy krok wnioskowania może 
+uruchomić nowe zapytanie do bazy wektorowej~\cite{trivedi2023interleaving}.
 
 Podejściem pośrednim jest HyDE (ang.~\textit{Hypothetical Document
   Embeddings}), które wykorzystuje model językowy do wygenerowania hipotetycznej

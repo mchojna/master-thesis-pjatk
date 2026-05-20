@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.4.17)  19 MAY 2026 22:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.4.17)  20 MAY 2026 15:10
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1213,7 +1213,15 @@ Package biblatex Info: Automatic encoding selection.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'thesis.bbl' found.
- (./thesis.bbl)
+ (./thesis.bbl
+
+Package biblatex Warning: The following entry could not be found
+(biblatex)                in the database:
+(biblatex)                weng2023agentm wang2024survey
+(biblatex)                Please verify the spelling and rerun
+(biblatex)                LaTeX afterwards.
+
+)
 Package biblatex Info: Reference section=0 on input line 66.
 Package biblatex Info: Reference segment=0 on input line 66.
 Package microtype Info: Patching varwidth to enable character protrusion.
@@ -1481,12 +1489,16 @@ Rozdzia\l  2.
 
 
 ] [8]
-Overfull \hbox (1.24252pt too wide) in paragraph at lines 196--196
+
+LaTeX Warning: Citation 'weng2023agentm wang2024survey' on page 9 undefined on input line 134.
+
+
+Overfull \hbox (1.24252pt too wide) in paragraph at lines 197--197
  [][]\T1/ptm/m/n/8 (-20) Deterministyczna 
  []
 
 [9] [10]
-Overfull \hbox (1.76852pt too wide) in paragraph at lines 316--327
+Overfull \hbox (1.76852pt too wide) in paragraph at lines 317--328
 []\T1/ptm/m/n/12 (-20) Architektura oparta na ro-ute-rze wy-ko-rzy-stuje me-cha-nizm mie-sza-niny eks-per-tów (ang. \T1/ptm/m/it/12 (-20) mixture-
  []
 
@@ -1498,147 +1510,147 @@ Overfull \hbox (1.76852pt too wide) in paragraph at lines 316--327
 
 ] [21]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 960.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 961.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 960.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 961.
  [22
 
 ] [23]
-Overfull \hbox (0.99335pt too wide) in paragraph at lines 1105--1115
+Overfull \hbox (0.99335pt too wide) in paragraph at lines 1106--1116
 []\T1/ptm/m/n/12 (-20) Podstaw¡ wy-szu-ki-wa-nia se-man-tycz-nego w sys-te-mach RAG jest kon-cep-cja osa-dze-nia (ang. \T1/ptm/m/it/12 (-20) em-
  []
 
 [24]
-Underfull \hbox (badness 10000) in paragraph at lines 1233--1233
+Underfull \hbox (badness 10000) in paragraph at lines 1234--1234
 []|\T1/ptm/b/n/10.95 (+20) Strukturalna
  []
 
 
-Underfull \hbox (badness 3138) in paragraph at lines 1233--1233
+Underfull \hbox (badness 3138) in paragraph at lines 1234--1234
 \T1/ptm/b/n/10.95 (+20) (ang. \T1/ptm/b/it/10.95 (+20) document-aware
  []
 
 [25] [26] [27] [28] [29
 
 ] [30] [31] [32]
-Underfull \hbox (badness 10000) in paragraph at lines 1664--1664
+Underfull \hbox (badness 10000) in paragraph at lines 1665--1665
 []|\T1/ptm/m/n/10.95 (+20) Dªugo±¢ do-ku-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1664--1664
+Underfull \hbox (badness 10000) in paragraph at lines 1665--1665
 []|\T1/ptm/m/n/10.95 (+20) Peªna pod-stawa
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1664--1664
+Underfull \hbox (badness 10000) in paragraph at lines 1665--1665
 \T1/ptm/m/n/10.95 (+20) prawna, de-fi-ni-cje,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1664--1664
+Underfull \hbox (badness 10000) in paragraph at lines 1665--1665
 []|\T1/ptm/m/n/10.95 (+20) Pytania szcze-gó-ªowe wy-ma-gaj¡
  []
 
 
-Underfull \hbox (badness 1377) in paragraph at lines 1664--1664
+Underfull \hbox (badness 1377) in paragraph at lines 1665--1665
 \T1/ptm/m/n/10.95 (+20) j¡-cej pod-stawy do roz-strzy-gni¦-cia
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1664--1664
+Underfull \hbox (badness 10000) in paragraph at lines 1665--1665
 []|\T1/ptm/m/n/10.95 (+20) Dominuj¡ce typy
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1664--1664
+Underfull \hbox (badness 10000) in paragraph at lines 1665--1665
 []|\T1/ptm/m/n/10.95 (+20) Zªo»one, wie-lo-
  []
 
 
-Underfull \hbox (badness 3977) in paragraph at lines 1664--1664
+Underfull \hbox (badness 3977) in paragraph at lines 1665--1665
 \T1/ptm/m/n/10.95 (+20) ochrony, wy-ª¡-cze-
  []
 
 
-Underfull \hbox (badness 6032) in paragraph at lines 1664--1664
+Underfull \hbox (badness 6032) in paragraph at lines 1665--1665
 []|\T1/ptm/m/n/10.95 (+20) Ogólne -- za-kres
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1664--1664
+Underfull \hbox (badness 10000) in paragraph at lines 1665--1665
 []|\T1/ptm/m/n/10.95 (+20) Odwoªania krzy-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1664--1664
+Underfull \hbox (badness 10000) in paragraph at lines 1665--1665
 \T1/ptm/m/n/10.95 (+20) »owe, ry-zyko
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1664--1664
+Underfull \hbox (badness 10000) in paragraph at lines 1665--1665
 \T1/ptm/m/n/10.95 (+20) po-mi-ni¦-cia wy-ª¡-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1664--1664
+Underfull \hbox (badness 10000) in paragraph at lines 1665--1665
 []|\T1/ptm/m/n/10.95 (+20) Ryzyko my-le-nia
  []
 
 
-Underfull \hbox (badness 5787) in paragraph at lines 1664--1664
+Underfull \hbox (badness 5787) in paragraph at lines 1665--1665
 \T1/ptm/m/n/10.95 (+20) typu do-ku-mentu; mie-sza-nie klas
  []
 
 [33] [34] [35
 
 ] [36] [37] [38]
-Underfull \hbox (badness 10000) in paragraph at lines 2013--2013
+Underfull \hbox (badness 10000) in paragraph at lines 2014--2014
 []|\T1/ptm/m/n/10.95 (+20) Nie -- po-rów-na-nie
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2013--2013
+Underfull \hbox (badness 10000) in paragraph at lines 2014--2014
 []|\T1/ptm/m/n/10.95 (+20) Hierarchiczna,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2013--2013
+Underfull \hbox (badness 10000) in paragraph at lines 2014--2014
 []|\T1/ptm/m/n/10.95 (+20) Brak do-meny do-ku-men-to-wej,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2013--2013
+Underfull \hbox (badness 10000) in paragraph at lines 2014--2014
 []|\T1/ptm/m/n/10.95 (+20) Nie -- po-rów-na-nie
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2013--2013
+Underfull \hbox (badness 10000) in paragraph at lines 2014--2014
 []|\T1/ptm/m/n/10.95 (+20) Wzbogacone
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2013--2013
+Underfull \hbox (badness 10000) in paragraph at lines 2014--2014
 []|\T1/ptm/m/n/10.95 (+20) Nie -- po-rów-na-nie
  []
 
 
-Underfull \hbox (badness 2608) in paragraph at lines 2013--2013
+Underfull \hbox (badness 2608) in paragraph at lines 2014--2014
 []|\T1/ptm/b/n/10.95 (+20) Tak -- staªy mo-del,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2013--2013
+Underfull \hbox (badness 10000) in paragraph at lines 2014--2014
 []|\T1/ptm/b/n/10.95 (+20) Wierno±¢, po-praw-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2013--2013
+Underfull \hbox (badness 10000) in paragraph at lines 2014--2014
 \T1/ptm/b/n/10.95 (+20) no±¢, opó¹-nie-nie,
  []
 
 
-Underfull \hbox (badness 1874) in paragraph at lines 2013--2013
+Underfull \hbox (badness 1874) in paragraph at lines 2014--2014
 \T1/ptm/b/n/10.95 (+20) ska do-mena ubez-pie-cze-niowa,
  []
 
@@ -1763,14 +1775,14 @@ Package hyperref Info: bookmark level for unknown wykres defaults to 0 on input 
 
  [102
 
+] [103
+
 ]
 Overfull \hbox (9.61615pt too wide) in paragraph at lines 96--96
 \T1/ptm/m/n/12 (-20) age agents with ver-bal re-in-for-ce-ment le-ar-ning, 2023,^^Q \T1/ptm/m/it/12 (-20) URL https://arxiv. org/abs/2303.11366\T1/ptm/m/n/12 (-20) ,
  []
 
-[103
-
-] [104] [105] [106] (./appendix.tex [107]
+[104] [105] [106] (./appendix.tex [107]
 Dodatek A.
 (../code/sources/config/prompts.py
 LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <6> not available
@@ -1845,15 +1857,15 @@ Package logreq Info: Writing requests to 'thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 49727 strings out of 467349
- 1011632 string characters out of 5415635
- 2224754 words of memory out of 5000000
- 76347 multiletter control sequences out of 15000+600000
+ 49728 strings out of 467349
+ 1011622 string characters out of 5415635
+ 2224804 words of memory out of 5000000
+ 76348 multiletter control sequences out of 15000+600000
  751342 words of font info for 544 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,14n,108p,1247b,2999s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfit1000.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sftt0800.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on thesis.pdf (133 pages, 1178697 bytes).
+Output written on thesis.pdf (133 pages, 1179261 bytes).
 PDF statistics:
  3013 PDF objects out of 3580 (max. 8388607)
  2692 compressed objects within 27 object streams

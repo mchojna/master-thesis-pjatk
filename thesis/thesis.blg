@@ -1,14 +1,17 @@
 [0] Config.pm:328> INFO - This is Biber 2.21
 [0] Config.pm:331> INFO - Logfile is 'thesis.blg'
-[42] biber-darwin:342> INFO - === Mon May 18, 2026, 19:50:41
-[53] Biber.pm:421> INFO - Reading 'thesis.bcf'
-[123] Biber.pm:1002> INFO - Found 59 citekeys in bib section 0
-[139] Biber.pm:4487> INFO - Processing section 0
-[145] Biber.pm:4678> INFO - Looking for bibtex file 'references.bib' for section 0
-[147] bibtex.pm:1713> INFO - LaTeX decoding ...
-[174] bibtex.pm:1519> INFO - Found BibTeX data source 'references.bib'
-[520] UCollate.pm:68> INFO - Overriding locale 'pl-PL' defaults 'variable = shifted' with 'variable = non-ignorable'
-[520] UCollate.pm:68> INFO - Overriding locale 'pl-PL' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[520] Biber.pm:4307> INFO - Sorting list 'none/global//global/global/global' of type 'entry' with template 'none' and locale 'pl-PL'
-[549] bbl.pm:676> INFO - Writing 'thesis.bbl' with encoding 'UTF-8'
-[573] bbl.pm:779> INFO - Output to thesis.bbl
+[33] biber-darwin:342> INFO - === Wed May 20, 2026, 15:19:34
+[41] Biber.pm:421> INFO - Reading 'thesis.bcf'
+[101] Biber.pm:1002> INFO - Found 60 citekeys in bib section 0
+[109] Biber.pm:4487> INFO - Processing section 0
+[113] Biber.pm:4678> INFO - Looking for bibtex file 'references.bib' for section 0
+[114] bibtex.pm:1713> INFO - LaTeX decoding ...
+[136] bibtex.pm:1519> INFO - Found BibTeX data source 'references.bib'
+[432] UCollate.pm:68> INFO - Overriding locale 'pl-PL' defaults 'variable = shifted' with 'variable = non-ignorable'
+[432] UCollate.pm:68> INFO - Overriding locale 'pl-PL' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[432] Biber.pm:4307> INFO - Sorting list 'none/global//global/global/global' of type 'entry' with template 'none' and locale 'pl-PL'
+[455] bbl.pm:676> INFO - Writing 'thesis.bbl' with encoding 'UTF-8'
+[475] bbl.pm:779> INFO - Output to thesis.bbl
+[475] Biber.pm:132> WARN - legacy month field 'Jun' in entry 'weng2023agent' is not an integer - this will probably not sort properly.
+[475] Biber.pm:132> WARN - I didn't find a database entry for 'weng2023agentm wang2024survey' (section 0)
+[475] Biber.pm:134> INFO - WARNINGS: 2

@@ -742,6 +742,37 @@
       \field{title}{Large language model based multi-agents: A survey of progress and challenges}
       \field{year}{2024}
     \endentry
+    \entry{weng2023agent}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=49d03d499031db786a0e61119024cf5a}{%
+           family={Weng},
+           familyi={W\bibinitperiod},
+           given={Lilian},
+           giveni={L\bibinitperiod}}}%
+      }
+      \strng{namehash}{49d03d499031db786a0e61119024cf5a}
+      \strng{fullhash}{49d03d499031db786a0e61119024cf5a}
+      \strng{fullhashraw}{49d03d499031db786a0e61119024cf5a}
+      \strng{bibnamehash}{49d03d499031db786a0e61119024cf5a}
+      \strng{authorbibnamehash}{49d03d499031db786a0e61119024cf5a}
+      \strng{authornamehash}{49d03d499031db786a0e61119024cf5a}
+      \strng{authorfullhash}{49d03d499031db786a0e61119024cf5a}
+      \strng{authorfullhashraw}{49d03d499031db786a0e61119024cf5a}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{lilianweng.github.io}
+      \field{month}{6}
+      \field{title}{LLM-powered Autonomous Agents}
+      \field{year}{2023}
+      \verb{urlraw}
+      \verb https://lilianweng.github.io/posts/2023-06-23-agent/
+      \endverb
+      \verb{url}
+      \verb https://lilianweng.github.io/posts/2023-06-23-agent/
+      \endverb
+    \endentry
     \entry{ji2023survey}{article}{}{}
       \name{author}{10}{}{%
         {{hash=24b318d147ffe07cf3d183806694085a}{%
@@ -1243,51 +1274,6 @@
       \field{pages}{74\bibrangedash 81}
       \range{pages}{8}
     \endentry
-    \entry{zhang2019bertscore}{article}{}{}
-      \name{author}{5}{}{%
-        {{hash=733e3732b7e3ce5cf2b04cf5e9bd9cf1}{%
-           family={Zhang},
-           familyi={Z\bibinitperiod},
-           given={Tianyi},
-           giveni={T\bibinitperiod}}}%
-        {{hash=68f7171bfe61e73c62ff3ffc4c84e5ab}{%
-           family={Kishore},
-           familyi={K\bibinitperiod},
-           given={Varsha},
-           giveni={V\bibinitperiod}}}%
-        {{hash=5d3c3a632d3c15054a532172777a7e40}{%
-           family={Wu},
-           familyi={W\bibinitperiod},
-           given={Felix},
-           giveni={F\bibinitperiod}}}%
-        {{hash=68a0238356fbd88b34be8886f25938a7}{%
-           family={Weinberger},
-           familyi={W\bibinitperiod},
-           given={Kilian\bibnamedelima Q},
-           giveni={K\bibinitperiod\bibinitdelim Q\bibinitperiod}}}%
-        {{hash=bda57b6734e461152eada7e447798ca8}{%
-           family={Artzi},
-           familyi={A\bibinitperiod},
-           given={Yoav},
-           giveni={Y\bibinitperiod}}}%
-      }
-      \strng{namehash}{b7341c276394125587ea24e5ba844df4}
-      \strng{fullhash}{0f3fc6c6b2643b223fd923710ae91526}
-      \strng{fullhashraw}{0f3fc6c6b2643b223fd923710ae91526}
-      \strng{bibnamehash}{0f3fc6c6b2643b223fd923710ae91526}
-      \strng{authorbibnamehash}{0f3fc6c6b2643b223fd923710ae91526}
-      \strng{authornamehash}{b7341c276394125587ea24e5ba844df4}
-      \strng{authorfullhash}{0f3fc6c6b2643b223fd923710ae91526}
-      \strng{authorfullhashraw}{0f3fc6c6b2643b223fd923710ae91526}
-      \field{extraname}{1}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{arXiv preprint arXiv:1904.09675}
-      \field{title}{Bertscore: Evaluating text generation with bert}
-      \field{year}{2019}
-    \endentry
     \entry{liu2023agentbench}{article}{}{}
       \true{moreauthor}
       \true{morelabelname}
@@ -1460,8 +1446,8 @@
       \strng{authornamehash}{cc636a97774e0b9630bfdedd703679b0}
       \strng{authorfullhash}{efb3202083d32370588a08c0b812934a}
       \strng{authorfullhashraw}{efb3202083d32370588a08c0b812934a}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{URL https://arxiv. org/abs/2404.13076}
@@ -1601,8 +1587,8 @@
       \strng{authornamehash}{4fad349c9814fa1756d66fcddcbe297e}
       \strng{authorfullhash}{e62709ee9657242fc11df91a6707820e}
       \strng{authorfullhashraw}{e62709ee9657242fc11df91a6707820e}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Proceedings of the 58th annual meeting of the association for computational linguistics}
@@ -2869,7 +2855,6 @@
       \strng{authornamehash}{b649a5efcdc74b7e4fd32180ee1f256d}
       \strng{authorfullhash}{37dbd85f6cd1e82e2a18aeb37c639188}
       \strng{authorfullhashraw}{37dbd85f6cd1e82e2a18aeb37c639188}
-      \field{extraname}{2}
       \field{sortinit}{1}
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
@@ -2921,8 +2906,8 @@
       \strng{authornamehash}{15e84fbd699ec5726467eceacded6f62}
       \strng{authorfullhash}{22b42039aa3e3e83880ccbd7f987bdf5}
       \strng{authorfullhashraw}{22b42039aa3e3e83880ccbd7f987bdf5}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Proceedings of the 2024 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers)}
@@ -2973,6 +2958,7 @@
       \range{pages}{17}
     \endentry
   \enddatalist
+  \missing{weng2023agentm wang2024survey}
 \endrefsection
 \endinput
 
