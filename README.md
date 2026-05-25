@@ -1,6 +1,6 @@
-# Analiza efektywności architektur wieloagentowych w analizie polskich dokumentów ubezpieczeniowych
+# Analiza efektywności różnych architektur wieloagentowych w analizie dokumentów ubezpieczeniowych
 
-_Effectiveness Analysis of Multi-Agent Architectures in Polish Insurance Document Question Answering_
+_An effectiveness of various multi-agent architectures in the analysis of insurance documents_
 
 **Praca Magisterska** — Polsko-Japońska Akademia Technik Komputerowych (PJATK), Wydział Informatyki
 
@@ -20,11 +20,11 @@ _Effectiveness Analysis of Multi-Agent Architectures in Polish Insurance Documen
 
 ## Abstrakt
 
-Praca bada wpływ topologii systemów agentowych na jakość udzielanych odpowiedzi na pytania wymagające analizy dokumentów ubezpieczeniowych — Ogólnych Warunków Ubezpieczenia (OWU) oraz dokumentów zawierających informacje o produkcie ubezpieczeniowym (IPID). Takie środowisko testowe zostało wybrane ze względu na swój szczególny poziom wymagań: specjalistyczny język prawniczo-ubezpieczeniowy splatał się tu z wielopoziomową strukturą warunków i wyłączeń rozproszonych po wielu paragrafach. Stawiało to badanym architekturom wysokie wymagania w zakresie pełnego wykorzystania mechanizmów wyszukiwania i wnioskowania.
+W pracy zbadano wpływ topologii systemów agentowych na jakość odpowiedzi na pytania wymagające analizy dokumentów ubezpieczeniowych — Ogólnych Warunków Ubezpieczenia (OWU) oraz dokumentów zawierających informacje o produkcie ubezpieczeniowym (IPID). Środowisko testowe wybrano ze względu na jego złożoność: specjalistyczny język prawniczo-ubezpieczeniowy łączy się z wielopoziomową strukturą warunków i wyłączeń rozproszonych w wielu paragrafach. Wymagało to od badanych architektur skutecznego wykorzystania mechanizmów wyszukiwania i wnioskowania.
 
-Porównano sześć architektur opartych na dużych modelach językowych (_ang. Large Language Models_, LLM): deterministyczną, planer-wykonawca, router-specjalista, tablicową, hierarchiczną oraz ReAct. Bazę wiedzy systemu stanowiło 22 polskich dokumentów ubezpieczeniowych od trzech głównych towarzystw ubezpieczeniowych. Opracowano autorski zestaw 90 pytań w czterech poziomach trudności: bardzo łatwym, łatwym, trudnym i bardzo trudnym — każde pytanie wymagało odniesienia się do treści zgromadzonych dokumentów. Łącznie przeprowadzono 540 uruchomień, które oceniono według wspólnego protokołu ewaluacyjnego uwzględniającego wierność, poprawność, zwięzłość, trafność pobieranych dokumentów, opóźnienie oraz zużycie tokenów.
+Porównano sześć architektur opartych na dużych modelach językowych (_ang. Large Language Models_, LLM): deterministyczną, planer–wykonawca, router–specjalista, tablicową, hierarchiczną oraz ReAct. Bazę wiedzy systemu stanowiły 22 polskie dokumenty ubezpieczeniowe pochodzące od trzech głównych towarzystw ubezpieczeniowych. Opracowano autorski zestaw 90 pytań w czterech poziomach trudności: bardzo łatwym, łatwym, trudnym i bardzo trudnym — każde pytanie wymagało odniesienia się do treści zgromadzonych dokumentów. Łącznie przeprowadzono 540 uruchomień, które oceniono według wspólnego protokołu ewaluacyjnego uwzględniającego wierność, poprawność, zwięzłość, trafność pobieranych dokumentów, opóźnienie oraz zużycie tokenów.
 
-Wyniki wskazują, że większa złożoność orkiestracji nie przekłada się automatycznie na wyższą jakość odpowiedzi. Architektura router-specjalista osiąga najwyższą średnią wierność 0,811, a deterministyczna — najwyższą średnią poprawność 0,716, obie przy koszcie porównywalnym z najprostszymi układami. Architektury hierarchiczna i ReAct zużywają kilkukrotnie więcej tokenów bez proporcjonalnego przyrostu jakości — analiza jakościowa wskazuje, że dłuższe ścieżki przetwarzania sprzyjają utracie kontroli nad kontekstem i propagacji błędu między modułami. Pracę uzupełniają wnioski praktyczne sformułowane na podstawie całościowego doświadczenia projektowania i ewaluacji systemu, obejmujące dobór architektury do przypadku użycia, opłacalność złożoności orkiestracji oraz rolę przygotowania danych jako czynnika warunkującego skuteczność systemu niezależnie od topologii.
+Wyniki wskazują, że większa złożoność orkiestracji nie gwarantuje wyższej jakości odpowiedzi. Architektura router–specjalista osiąga najwyższą średnią wierność (0,811), a deterministyczna — najwyższą średnią poprawność (0,716), obie przy koszcie porównywalnym z najprostszymi układami. Architektury hierarchiczna i ReAct zużywają kilkukrotnie więcej tokenów bez proporcjonalnego przyrostu jakości — analiza jakościowa wskazuje, że dłuższe ścieżki przetwarzania prowadzą do utraty kontroli nad kontekstem i propagacji błędu między modułami. Sformułowano wnioski praktyczne dotyczące doboru architektury do przypadku użycia, opłacalności złożoności orkiestracji oraz roli przygotowania danych jako czynnika warunkującego skuteczność systemu niezależnie od topologii.
 
 ---
 
@@ -85,7 +85,7 @@ Wszystkie sześć architektur zaimplementowano jako skompilowane grafy stanów w
 
 ### Deterministyczna
 
-Liniowa sekwencja 8 węzłów bez rozgałęzień: `question_parser → query_rewriter → retrieve_all → rerank → evidence_selector → prompt_selector → citation_maker → answer_synthesizer`. Zapewnia stabilność i najwyższą poprawność ogólną (0.716).
+Liniowa sekwencja 8 węzłów bez rozgałęzień: `parse_question → rewrite_query → retrieve_all → rerank → select_evidence → select_prompt → make_citations → generate_answer`. Zapewnia stabilność i najwyższą poprawność ogólną (0.716).
 
 ### Planer–Wykonawca
 
@@ -123,7 +123,7 @@ Dokumenty przetworzono na 5108 fragmentów (OWU: 4566, IPID: 542), wygenerowano 
 
 ### Zbiór Pytań Ewaluacyjnych
 
-Plik `code/data/evaluation/questions/questions_20251130.csv` zawiera 90 ustrukturyzowanych pytań zbalansowanych trójwymiarowo: po 30 dla każdego ubezpieczyciela, po 30 dla kategorii produktowej oraz równomierny podział na cztery poziomy trudności (Bardzo łatwe, Łatwe, Złożone, Bardzo złożone).
+Plik `code/data/evaluation/questions/questions_20251130.csv` zawiera 90 ustrukturyzowanych pytań zbalansowanych trójwymiarowo: po 30 dla każdego ubezpieczyciela, po 30 dla kategorii produktowej oraz podział na cztery poziomy trudności: 9 pytań bardzo prostych i po 27 pytań na pozostałych trzech poziomach (Bardzo proste, Proste, Złożone, Bardzo złożone).
 
 ---
 
@@ -396,7 +396,7 @@ _Kod źródłowy dystrybuowany jest na licencji MIT. Prawa autorskie do tekstu p
 
 This study examines the influence of agent orchestration topology on the quality of answers generated from Polish insurance documents. Six agent architectures — deterministic, planner–executor, router–specialist, blackboard, hierarchical, and ReAct — were implemented as LangGraph compiled state graphs and compared in a controlled experiment comprising 540 runs (90 evaluation questions across 6 architectures). All architectures shared an identical tool set, vector index, base language model, and evaluation protocol; topology was the sole independent variable.
 
-The principal finding is that four architectures with fixed or shallowly-controlled execution (deterministic, planner–executor, router–specialist, blackboard) achieve faithfulness scores in the range 0.778–0.811 at a cost of 0.00037–0.00040 USD per query. The two iterative architectures (hierarchical, ReAct) incur costs 100–187 times higher while scoring lower on all four quality metrics. The results indicate that, in the single-hop insurance document domain, increased orchestration complexity does not produce proportional quality gains; targeted retrieval steering — as implemented by the router–specialist — provides a measurable, bounded advantage on complex questions at negligible additional cost.
+The principal finding is that four architectures with fixed or shallowly-controlled execution (deterministic, planner–executor, router–specialist, blackboard) achieve faithfulness scores in the range 0.778–0.811 at a cost of 0.00037–0.00040 USD per query. The two iterative architectures (hierarchical, ReAct) incur costs 114–187 times higher while scoring lower on all four quality metrics. The results indicate that, in the single-hop insurance document domain, increased orchestration complexity does not produce proportional quality gains; targeted retrieval steering — as implemented by the router–specialist — provides a measurable, bounded advantage on complex questions at negligible additional cost.
 
 ---
 
@@ -457,7 +457,7 @@ All six architectures are implemented as LangGraph compiled state graphs. They o
 
 ### Deterministic pipeline
 
-The deterministic architecture follows a fixed sequence of eight nodes without branching: `question_parser → query_rewriter → retrieve_all → rerank → evidence_selector → prompt_selector → citation_maker → answer_synthesizer`. It achieves the highest correctness score (0.716) and a stable execution trace.
+The deterministic architecture follows a fixed sequence of eight nodes without branching: `parse_question → rewrite_query → retrieve_all → rerank → select_evidence → select_prompt → make_citations → generate_answer`. It achieves the highest correctness score (0.716) and a stable execution trace.
 
 ### Planner–Executor
 
@@ -491,11 +491,11 @@ The knowledge base comprises 22 Polish insurance documents — 11 OWU (Ogólne W
 - **PZU:** PZU Auto, PZU Dom, PZU Wojażer
 - **Warta:** Autocasco Komfort/Standard, Warta Dom/Komfort, Warta Travel
 
-The resulting 5,108 text chunks (OWU: 4,566, IPID: 542) are embedded with `text-embedding-3-large` (3,072 dimensions) and stored in Qdrant with nine metadata payload indices.
+The resulting 5,108 text chunks (OWU: 4,566, IPID: 542) are embedded with `text-embedding-3-large` (3,072 dimensions) and stored in Qdrant with eight metadata payload indices.
 
 ### Evaluation Question Set
 
-The question set is stored in `code/data/evaluation/questions/questions_20251130.csv`. It contains 90 questions balanced across three dimensions simultaneously: 30 per insurer, 30 per product category, and an equal distribution across 4 difficulty levels (Very easy, Easy, Complex, Very complex).
+The question set is stored in `code/data/evaluation/questions/questions_20251130.csv`. It contains 90 questions balanced across three dimensions simultaneously: 30 per insurer, 30 per product category, and a distribution across 4 difficulty levels (9 very simple, 27 simple, 27 complex, 27 very complex).
 
 ---
 
